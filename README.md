@@ -2,6 +2,9 @@
 
 React components that require _zero_ configuration.
 
+Note: no styling, CSS must be applied elsewhere in your code.
+
+
 ## Components
 
 ### Table
@@ -13,4 +16,12 @@ React components that require _zero_ configuration.
 
 ![Table](docs/Table.png)
 
-Note: no styling, CSS must be applied elsewhere in your code.
+### SelectDropdown
+
+    <SelectDropdown
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={event => handleChange(event)}
+    />
+
+![SelectDropdown](docs/SelectDropdown.png)
