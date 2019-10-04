@@ -11,8 +11,11 @@ Note: no styling, CSS must be applied elsewhere in your code.
 
     <Table
       array={arrayOfObjects}
-      customFormat={customTableFormat.bind(undefined, options)}
+      customFormat={customTableFormat}
     />
+
+    const customTableFormat = (options, field, value) => {
+    }
 
 ![Table](docs/Table.png)
 
