@@ -1,5 +1,1 @@
-import Table from './components/Table'
-
-export default {
-  Table
-}
+export { default as Table } from './components/Table'
