@@ -1,11 +1,29 @@
 {
   "name": "react-zeroconfig-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React components that require zero configuration.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "webpack"
+  },
   "dependencies": {
     "react": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^2.1.1",
+    "path": "^0.12.7",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
   }
 }
