@@ -5,6 +5,11 @@ React components that require _zero_ configuration.
 Note: no styling, CSS must be applied elsewhere in your code.
 
 
+## Installation
+
+    yarn add react-zeroconfig-components  # or: npm install react-zeroconfig-components
+
+
 ## Components
 
 ### Table
