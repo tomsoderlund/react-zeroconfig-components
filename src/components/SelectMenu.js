@@ -9,7 +9,7 @@ const Arrows = () => (
   </svg>
 )
 
-const MenuItem = ({ option, index, value, handleSelect, isStringArray }) => (
+const MenuItem = ({ option, index, value, isStringArray, handleSelect }) => (
   <button
     className={'menu-item' + ((isStringArray ? index : option.value) === value ? ' selected' : '')}
     title={option.title}

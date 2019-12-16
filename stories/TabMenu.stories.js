@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
 import TabMenu from '../src/components/TabMenu'
 import './styles.css'
@@ -22,10 +22,18 @@ export default {
 
 export const basic = () => {
   const [selected, setSelected] = useState(0)
-  return <TabMenu options={simpleArray} value={selected} onChange={value => setSelected(value)} />
+  const handleChange = value => {
+    setSelected(value)
+    action('onChange')(value)
+  }
+  return <TabMenu options={simpleArray} value={selected} onChange={handleChange} />
 }
 
 export const objectArray = () => {
   const [selected, setSelected] = useState(0)
-  return <TabMenu options={menuOptions} value={selected} onChange={value => setSelected(value)} />
+  const handleChange = value => {
+    setSelected(value)
+    action('onChange')(value)
+  }
+  return <TabMenu options={menuOptions} value={selected} onChange={handleChange} />
 }

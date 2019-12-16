@@ -44,6 +44,23 @@ tr:nth-child(2n+0) {
   user-select: none;
 }
 
+/* Reset styles */
+.tab-menu button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.tab-menu button:focus {
+  outline: none;
+}
+.tab-menu button:focus:not(.selected) {
+  border: 1px solid gray;
+}
+
 .tab-menu .menu-item { 
   cursor: pointer;
   flex: 1;
@@ -74,6 +91,7 @@ tr:nth-child(2n+0) {
   user-select: none;
 }
 
+/* Reset styles */
 .select button {
   -webkit-appearance: none;
   -moz-appearance: none;
