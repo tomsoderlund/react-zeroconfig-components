@@ -5,7 +5,7 @@
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
   "scripts": {
-    "new": "touch src/components/New.js; touch stories/New.stories.js",
+    "new": "touch src/components/New.js; touch stories/New.stories.js; echo Created component New.js, to rename do:; echo mv src/components/New.js src/components/MyComponent.js; echo mv stories/New.stories.js stories/MyComponent.stories.js",
     "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
     "lint": "standard",
     "fix": "standard --fix",
