@@ -1,3 +1,3 @@
 const { Table } = require('../dist')
 
-console.log(`Table:`, {Table})
+console.log('Table:', { Table })
