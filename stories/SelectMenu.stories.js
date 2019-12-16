@@ -22,7 +22,7 @@ export default {
 }
 
 export const basic = () => {
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(simpleArray[1])
   const handleChange = value => {
     setSelected(value)
     action('onChange')(value)
@@ -31,7 +31,7 @@ export const basic = () => {
 }
 
 export const objectArray = () => {
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(menuOptions[1].value)
   const handleChange = value => {
     setSelected(value)
     action('onChange')(value)

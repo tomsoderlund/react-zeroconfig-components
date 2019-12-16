@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MenuItem = ({ option, index, value, isStringArray, handleSelect }) => (
+const MenuItem = ({ option, value, isStringArray, handleSelect }) => (
   <button
-    className={'menu-item' + ((isStringArray ? index : option.value) === value ? ' selected' : '')}
+    className={'menu-item' + ((isStringArray ? option : option.value) === value ? ' selected' : '')}
     title={option.title}
     disabled={option.disabled}
     onClick={handleSelect}
@@ -19,10 +19,9 @@ export default ({ options, value, onChange }) => {
       {options && options.map((option, index) => (
         <MenuItem
           key={index}
-          index={index}
           option={option}
           value={value}
-          handleSelect={(event) => onChange((isStringArray ? index : option.value))}
+          handleSelect={(event) => onChange((isStringArray ? option : option.value))}
           isStringArray={isStringArray}
         />
       ))}
