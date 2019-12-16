@@ -1,6 +1,6 @@
 {
   "name": "react-zeroconfig-components",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "React components that require zero configuration.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
@@ -10,7 +10,7 @@
     "lint": "standard",
     "fix": "standard --fix",
     "unit": "yarn prepare && node test/index.js ",
-    "prepare": "webpack; cp src/components/*.css dist/",
+    "prepare": "rm -rf dist && mkdir dist && babel ./src/components -d dist --copy-files",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -22,13 +22,14 @@
     "react": "^16.8.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-json-strings": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.7.4",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
