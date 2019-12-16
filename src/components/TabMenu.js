@@ -12,10 +12,10 @@ const MenuItem = ({ option, value, isStringArray, handleSelect }) => (
 )
 
 /** TabMenu */
-export default ({ options, value, onChange }) => {
+export default ({ options, value, className, onChange }) => {
   const isStringArray = options && typeof options[0] === 'string'
   return (
-    <div className='tab-menu'>
+    <div className={'tab-menu ' + (className || '')}>
       {options && options.map((option, index) => (
         <MenuItem
           key={index}

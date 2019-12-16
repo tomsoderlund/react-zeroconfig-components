@@ -1,9 +1,9 @@
 import React from 'react'
 
 /** customFormat = (field, value) => formattedValue */
-export default ({ array, customFormat }) => array && array.length
+export default ({ array, customFormat, className }) => array && array.length
   ? (
-    <table>
+    <table className={className}>
       <thead>
         <tr>
           {Object.keys(array[0]).map((column, columnIndex) => <th key={columnIndex}>{column}</th>)}
@@ -22,4 +22,4 @@ export default ({ array, customFormat }) => array && array.length
       </tbody>
     </table>
   )
-  : <p>No data to show in table</p>
+  : null

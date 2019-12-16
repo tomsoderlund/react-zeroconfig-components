@@ -21,7 +21,7 @@ const MenuItem = ({ option, value, isStringArray, handleSelect }) => (
 )
 
 /** SelectMenu */
-export default ({ options = [], value, onChange }) => {
+export default ({ options = [], value, className, onChange }) => {
   const [isOpen, setIsOpen] = useState(0)
   const isStringArray = options && typeof options[0] === 'string'
   const currentName = isStringArray ? value : options[value] && options[value].name
@@ -30,7 +30,7 @@ export default ({ options = [], value, onChange }) => {
     setIsOpen(false)
   }
   return (
-    <div className={'select' + (isOpen ? ' open' : '')}>
+    <div className={'select ' + (isOpen ? 'open ' : '') + (className || '')}>
       <button className='menu-closed' onClick={value => setIsOpen(!isOpen)}>
         {currentName}
         <Arrows />
