@@ -8,7 +8,7 @@ export default ({ options, value, onChange }) => {
       {options.map((option, index) => (
         <span
           key={index}
-          className={'tab-menu-item' + ((isStringArray ? index : option.value) === value ? ' selected' : '')}
+          className={'menu-item' + ((isStringArray ? index : option.value) === value ? ' selected' : '')}
           title={option.title}
           onClick={(event) => onChange((isStringArray ? index : option.value))}
         >
