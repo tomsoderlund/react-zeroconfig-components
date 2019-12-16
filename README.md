@@ -75,4 +75,4 @@ Preview components in Storybook:
 
 ### How to build and deploy
 
-    yarn publish  # yarn prepare (webpack) will be run automatically
+    yarn publish  # yarn prepare (Babel) will be run automatically
