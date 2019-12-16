@@ -6,8 +6,11 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
+    "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
+    "lint": "standard",
+    "fix": "standard --fix",
+    "unit": "yarn prepare && node test/index.js ",
     "prepare": "webpack",
-    "test": "yarn prepare && node test/index.js ",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -29,6 +32,7 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^2.1.1",
     "path": "^0.12.7",
+    "standard": "^14.3.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
