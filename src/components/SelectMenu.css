@@ -1,5 +1,6 @@
 .select {
   user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Reset styles */
