@@ -1,6 +1,6 @@
 import React from 'react'
 
-/** customFormat = (options, field, value) => formattedValue */
+/** customFormat = (field, value) => formattedValue */
 export default ({ array, customFormat }) => array && array.length
   ? (
     <table>
