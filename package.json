@@ -1,10 +1,9 @@
 {
   "name": "react-zeroconfig-components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React components that require zero configuration.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
-  "main": "dist/index.js",
   "scripts": {
     "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
     "lint": "standard",
@@ -14,6 +13,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
   "dependencies": {
     "react": "^16.8.3"
   },

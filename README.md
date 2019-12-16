@@ -45,3 +45,8 @@ See the Storybook stories in `/stories` to see how the components are used.
     />
 
 ![SelectDropdown](docs/SelectDropdown.png)
+
+
+## How to build
+
+    yarn prepare
