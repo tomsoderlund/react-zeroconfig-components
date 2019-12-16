@@ -1,6 +1,6 @@
 {
   "name": "react-zeroconfig-components",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "React components that require zero configuration.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
