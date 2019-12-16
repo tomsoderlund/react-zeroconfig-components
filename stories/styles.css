@@ -9,7 +9,7 @@ body {
   padding: 1em;
 }
 
-/* #NiceAndSimple: Table - https://codepen.io/tomsoderlund/pen/mmZrRR */
+/* ----- #NiceAndSimple: Table - https://codepen.io/tomsoderlund/pen/mmZrRR ----- */
 table {
   border-collapse: collapse;
 }
@@ -27,6 +27,8 @@ thead tr {
 tr:nth-child(2n+0) {
   background-color: #eee;
 }
+
+/* ----- TabMenu ----- */
 
 .tab-menu {
   padding: 0;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-/**  */
+/** TabMenu */
 export default ({ options, value, onChange }) => {
   const isStringArray = typeof options[0] === 'string'
   return (
