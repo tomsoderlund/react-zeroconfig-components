@@ -5,6 +5,7 @@
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
   "scripts": {
+    "new": "touch src/components/New.js; touch stories/New.stories.js",
     "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
     "lint": "standard",
     "fix": "standard --fix",

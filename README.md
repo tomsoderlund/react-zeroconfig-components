@@ -12,7 +12,7 @@ Note: no styling, CSS must be applied elsewhere in your code.
 
 ## Components
 
-See the Storybook stories in `/stories` to see how the components are used.
+See the Storybook stories in `/stories` to see how the components are used in code.
 
 
 ### Table
@@ -40,6 +40,10 @@ See the Storybook stories in `/stories` to see how the components are used.
 
 
 ## Developing components
+
+### Create new component
+
+    yarn new
 
 ### How to test and preview
 
