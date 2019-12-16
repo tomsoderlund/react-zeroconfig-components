@@ -28,10 +28,11 @@ See the Storybook stories in `/stories` to see how the components are used.
 
     <Table
       array={arrayOfObjects}
-      customFormat={customTableFormat}
+      customFormat={optionalCustomFormat}
     />
 
-    const customTableFormat = (options, field, value) => {
+    const optionalCustomFormat = (field, value) => {
+      /* return formatted value */
     }
 
 ![Table](docs/Table.png)
