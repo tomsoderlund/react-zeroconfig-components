@@ -38,6 +38,16 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![SelectDropdown](docs/SelectDropdown.png)
 
+### TabMenu
+
+    <TabMenu
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={event => handleChange(event)}
+    />
+
+![TabMenu](docs/TabMenu.png)
+
 
 ## Developing components
 
