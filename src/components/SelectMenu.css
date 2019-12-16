@@ -11,27 +11,30 @@
   border: none;
   background: none;
   cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
 }
 .select button:focus {
   border: 1px solid gray;
   outline: none;
 }
+.select button:hover {
+  background-color: #dddddd;
+}
+.select button:disabled {
+  color: #bbbbbb;
+}
 
 .select .menu-closed {
-  padding: 0;
+  padding: 0 0.5em;
   margin: 0;
   list-style: none;
-  display: flex;
-  justify-content: flex-start;
   height: 2em;
   width: 10em;
   margin-right: 1em;
   border-radius: 0.5em;
   border: 1px solid #d3d3d3;
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 
@@ -60,15 +63,9 @@
   display: block;
   height: 100%;
   margin: 0;
-  transition: all 0.2s;
   color: black;
   background-color: none;
-  cursor: pointer;
   padding: 0.5em;
-  text-align: center;
-}
-.select .menu-item:hover {
-  background-color: #d3d3d3;
 }
 .select .menu-item.selected {
   background-color: black;

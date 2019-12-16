@@ -10,7 +10,7 @@ const simpleArray = ['Apple', 'Banana', 'Citrus']
 const menuOptions = [
   { name: 'Sam Lowry', value: 0 },
   { name: 'Jill Layton', value: 1 },
-  { name: 'Harry Tuttle', value: 2 },
+  { name: 'Harry Tuttle', value: 2, disabled: true },
   { name: 'Mrs. Ida Lowry', value: 3 },
   { name: 'Mr. Kurtzmann', value: 4 }
 ]

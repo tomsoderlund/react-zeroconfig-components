@@ -13,6 +13,7 @@ const MenuItem = ({ option, index, value, isStringArray, handleSelect }) => (
   <button
     className={'menu-item' + ((isStringArray ? index : option.value) === value ? ' selected' : '')}
     title={option.title}
+    disabled={option.disabled}
     onClick={handleSelect}
   >
     {isStringArray ? option : option.name}

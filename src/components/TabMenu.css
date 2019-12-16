@@ -21,6 +21,7 @@
   border: none;
   background: none;
   cursor: pointer;
+  transition: all 0.2s;
 }
 .tab-menu button:focus {
   outline: none;
@@ -28,25 +29,24 @@
 .tab-menu button:focus:not(.selected) {
   border: 1px solid gray;
 }
+.tab-menu button:hover {
+  background-color: #dddddd;
+}
+.tab-menu button:disabled {
+  color: #bbbbbb;
+}
 
 .tab-menu .menu-item { 
-  cursor: pointer;
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
   height: 100%;
   margin: 0;
-  transition: all 0.2s;
   color: black;
-  background-color: none;
-  cursor: pointer;
 }
 .tab-menu .menu-item:not(:last-child) {
   border-right: 1px solid black;
-}
-.tab-menu .menu-item:hover {
-  background-color: #d3d3d3;
 }
 .tab-menu .menu-item.selected {
   background-color: black;
