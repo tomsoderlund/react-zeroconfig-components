@@ -10,15 +10,6 @@ Note: no styling, CSS must be applied elsewhere in your code.
     yarn add react-zeroconfig-components  # or: npm install react-zeroconfig-components
 
 
-## How to use
-
-Preview components in Storybook:
-
-    yarn storybook
-
-...then open http://localhost:6006/ in your browser.
-
-
 ## Components
 
 See the Storybook stories in `/stories` to see how the components are used.
@@ -48,6 +39,17 @@ See the Storybook stories in `/stories` to see how the components are used.
 ![SelectDropdown](docs/SelectDropdown.png)
 
 
-## How to build
+## Developing components
+
+### How to test and preview
+
+Preview components in Storybook:
+
+    yarn storybook
+
+...then open http://localhost:6006/ in your browser.
+
+### How to build and deploy
 
     yarn prepare
+    yarn publish
