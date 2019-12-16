@@ -21,10 +21,10 @@ const MenuItem = ({ option, index, value, isStringArray, handleSelect }) => (
 )
 
 /** SelectMenu */
-export default ({ options, value, onChange }) => {
+export default ({ options = [], value, onChange }) => {
   const [isOpen, setIsOpen] = useState(0)
-  const isStringArray = typeof options[0] === 'string'
-  const currentName = isStringArray ? options[value] : options[value].name
+  const isStringArray = options && typeof options[0] === 'string'
+  const currentName = isStringArray ? options[value] : options[value] && options[value].name
   const handleSelect = value => {
     onChange(value)
     setIsOpen(false)
@@ -36,7 +36,7 @@ export default ({ options, value, onChange }) => {
         <Arrows />
       </button>
       <div className='menu-open'>
-        {options.map((option, index) => (
+        {options && options.map((option, index) => (
           <MenuItem
             key={index}
             index={index}
