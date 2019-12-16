@@ -1,0 +1,76 @@
+.select {
+  user-select: none;
+}
+
+/* Reset styles */
+.select button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.select button:focus {
+  border: 1px solid gray;
+  outline: none;
+}
+
+.select .menu-closed {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  height: 2em;
+  width: 10em;
+  margin-right: 1em;
+  border-radius: 0.5em;
+  border: 1px solid #d3d3d3;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.select .menu-closed .arrows {
+  position: absolute;
+  right: 0.5em;
+}
+
+.select .menu-open {
+  display: none;
+  position: absolute;
+  width: 10em;
+  border-radius: 0.5em;
+  border: 1px solid #d3d3d3;
+  background-color: white;
+  margin: auto;
+  overflow: hidden;
+}
+.select.open .menu-open {
+  display: block;
+}
+
+.select .menu-item { 
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  margin: 0;
+  transition: all 0.2s;
+  color: black;
+  background-color: none;
+  cursor: pointer;
+  padding: 0.5em;
+  text-align: center;
+}
+.select .menu-item:hover {
+  background-color: #d3d3d3;
+}
+.select .menu-item.selected {
+  background-color: black;
+  color: white;
+}

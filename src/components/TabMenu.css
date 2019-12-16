@@ -1,0 +1,54 @@
+.tab-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid black;
+  border-radius: 0.125em;
+  height: 2em;
+  width: 100%;
+  margin-right: 1em;
+  user-select: none;
+}
+
+/* Reset styles */
+.tab-menu button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.tab-menu button:focus {
+  outline: none;
+}
+.tab-menu button:focus:not(.selected) {
+  border: 1px solid gray;
+}
+
+.tab-menu .menu-item { 
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  transition: all 0.2s;
+  color: black;
+  background-color: none;
+  cursor: pointer;
+}
+.tab-menu .menu-item:not(:last-child) {
+  border-right: 1px solid black;
+}
+.tab-menu .menu-item:hover {
+  background-color: #d3d3d3;
+}
+.tab-menu .menu-item.selected {
+  background-color: black;
+  color: white;
+}

@@ -1,16 +1,16 @@
 {
   "name": "react-zeroconfig-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React components that require zero configuration.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
   "scripts": {
-    "new": "touch src/components/New.js; touch stories/New.stories.js; echo Created component New.js, to rename do:; echo mv src/components/New.js src/components/MyComponent.js; echo mv stories/New.stories.js stories/MyComponent.stories.js",
+    "new": "touch src/components/New.js; touch src/components/New.css; touch stories/New.stories.js; echo Created component New.js, to rename do:; echo mv src/components/New.js src/components/MyComponent.js; echo mv src/components/New.css src/components/MyComponent.css; echo mv stories/New.stories.js stories/MyComponent.stories.js",
     "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
     "lint": "standard",
     "fix": "standard --fix",
     "unit": "yarn prepare && node test/index.js ",
-    "prepare": "webpack",
+    "prepare": "webpack; cp src/components/*.css dist/",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

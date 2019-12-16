@@ -3,7 +3,8 @@ import React from 'react'
 // import { linkTo } from '@storybook/addon-links' // linkTo('Button')
 
 import Table from '../src/components/Table'
-import './styles.css'
+import '../src/components/Table.css'
+import '../src/components/common.css'
 
 const tableData = [
   { name: 'Sam Lowry', age: 40 },

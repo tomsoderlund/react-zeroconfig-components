@@ -1,0 +1,18 @@
+/* ----- #NiceAndSimple: Table - https://codepen.io/tomsoderlund/pen/mmZrRR ----- */
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  vertical-align: top;
+}
+
+thead tr {
+  background-color: #ccc;
+}
+
+tr:nth-child(2n+0) {
+  background-color: #eee;
+}

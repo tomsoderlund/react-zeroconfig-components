@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import TabMenu from '../src/components/TabMenu'
-import './styles.css'
+import '../src/components/TabMenu.css'
+import '../src/components/common.css'
 
 const simpleArray = ['Apple', 'Banana', 'Citrus']
 

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import SelectMenu from '../src/components/SelectMenu'
-import './styles.css'
+import '../src/components/SelectMenu.css'
+import '../src/components/common.css'
 
 const simpleArray = ['Apple', 'Banana', 'Citrus']
 
