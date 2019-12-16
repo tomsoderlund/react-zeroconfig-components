@@ -7,7 +7,9 @@
   "main": "dist/index.js",
   "scripts": {
     "prepare": "webpack",
-    "test": "yarn prepare && node test/index.js "
+    "test": "yarn prepare && node test/index.js ",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "^16.8.3"
@@ -20,6 +22,10 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.1.1",
     "path": "^0.12.7",
