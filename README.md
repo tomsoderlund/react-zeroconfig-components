@@ -58,6 +58,16 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![TabMenu](docs/TabMenu.png)
 
+### Card
+
+    <Card
+      layer={1}
+      visible={isVisible}
+      onClose={event => setIsVisible(!isVisible)}
+    />
+
+![Card](docs/Card.png)
+
 
 ## Developing components
 
