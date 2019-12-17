@@ -1,0 +1,22 @@
+/* #NiceAndSimple: Token/Tag */
+.token {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.6em 1em;
+  background-color: deepskyblue;
+  color: white;
+  font-size: 0.9em;
+  padding: 0.2em 0.7em;
+  margin-right: 0.2em;
+  border-radius: 2em;
+  border: 1px solid rgba(0,0,0, 0.2);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.token:hover:not(:disabled) {
+  opacity: 0.8;
+}
+.token.new {
+  background-color: limegreen;
+}

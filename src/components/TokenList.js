@@ -1,23 +1,23 @@
 import React from 'react'
 
-const MenuItem = ({ option, value, isStringArray, handleChange }) => (
-  <button
-    className={'menu-item' + ((isStringArray ? option : option.value) === value ? ' selected' : '')}
+const Token = ({ option, value, isStringArray, handleChange }) => (
+  <span
+    className='token'
     title={option.title}
     disabled={option.disabled}
     onClick={handleChange}
   >
     {isStringArray ? option : option.name}
-  </button>
+  </span>
 )
 
-/** TabMenu */
+/** TokenList */
 export default ({ options, value, className, onChange }) => {
   const isStringArray = options && typeof options[0] === 'string'
   return (
-    <div className={'tab-menu ' + (className || '')}>
+    <div className={'token-list ' + (className || '')}>
       {options && options.map((option, index) => (
-        <MenuItem
+        <Token
           key={index}
           option={option}
           value={value}

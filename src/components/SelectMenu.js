@@ -9,12 +9,12 @@ const Arrows = () => (
   </svg>
 )
 
-const MenuItem = ({ option, value, isStringArray, handleSelect }) => (
+const MenuItem = ({ option, value, isStringArray, handleChange }) => (
   <button
     className={'menu-item' + ((isStringArray ? option : option.value) === value ? ' selected' : '')}
     title={option.title}
     disabled={option.disabled}
-    onClick={handleSelect}
+    onClick={handleChange}
   >
     {isStringArray ? option : option.name}
   </button>
@@ -25,7 +25,7 @@ export default ({ options = [], value, className, onChange }) => {
   const [isOpen, setIsOpen] = useState(0)
   const isStringArray = options && typeof options[0] === 'string'
   const currentName = isStringArray ? value : options[value] && options[value].name
-  const handleSelect = value => {
+  const handleChange = value => {
     onChange(value)
     setIsOpen(false)
   }
@@ -41,7 +41,7 @@ export default ({ options = [], value, className, onChange }) => {
             key={index}
             option={option}
             value={value}
-            handleSelect={event => handleSelect(isStringArray ? option : option.value)}
+            handleChange={event => handleChange(isStringArray ? option : option.value)}
             isStringArray={isStringArray}
           />
         ))}

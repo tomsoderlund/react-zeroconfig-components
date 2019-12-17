@@ -58,6 +58,16 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![TabMenu](docs/TabMenu.png)
 
+### TokenList
+
+    <TokenList
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={event => handleChange(event)}
+    />
+
+![TokenList](docs/TokenList.png)
+
 ### Card
 
     <Card
