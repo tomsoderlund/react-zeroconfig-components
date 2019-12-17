@@ -2,7 +2,7 @@
 
 React components that require _zero_ configuration.
 
-Note: no styling, CSS must be applied elsewhere in your code.
+Styling is optional, CSS files are included but you can also use `styled-components` or similar.
 
 
 ## Installation
