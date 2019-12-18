@@ -1,0 +1,21 @@
+.input-like {
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 0.2em;
+  border: 1px solid lightgray;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  max-width: 20em;
+  padding: 0.6em;
+  margin: 0.2em;
+  text-align: left;
+  box-shadow: none;
+}
+
+.input-like select {
+  margin-left: 0.2em;
+}

@@ -68,6 +68,16 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![TokenList](docs/TokenList.png)
 
+### TokenInput
+
+    <TokenInput
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={event => handleChange(event)}
+    />
+
+![TokenInput](docs/TokenInput.png)
+
 ### Card
 
     <Card

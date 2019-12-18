@@ -23,18 +23,18 @@ export default {
 
 export const basic = () => {
   const [selected, setSelected] = useState(simpleArray[1])
-  const handleChange = value => {
+  const handleSelect = value => {
     setSelected(value)
-    action('onChange')(value)
+    action('onSelect')(value)
   }
-  return <TokenList options={simpleArray} value={selected} onChange={handleChange} />
+  return <TokenList options={simpleArray} value={selected} onSelect={handleSelect} />
 }
 
 export const objectArray = () => {
   const [selected, setSelected] = useState(menuOptions[1].value)
-  const handleChange = value => {
+  const handleSelect = value => {
     setSelected(value)
-    action('onChange')(value)
+    action('onSelect')(value)
   }
-  return <TokenList options={menuOptions} value={selected} onChange={handleChange} />
+  return <TokenList options={menuOptions} value={selected} onSelect={handleSelect} />
 }

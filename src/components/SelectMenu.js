@@ -25,10 +25,12 @@ export default ({ options = [], value, className, onChange }) => {
   const [isOpen, setIsOpen] = useState(0)
   const isStringArray = options && typeof options[0] === 'string'
   const currentName = isStringArray ? value : options[value] && options[value].name
+
   const handleChange = value => {
     onChange(value)
     setIsOpen(false)
   }
+
   return (
     <div className={'select ' + (isOpen ? 'open ' : '') + (className || '')}>
       <button className='menu-closed' onClick={value => setIsOpen(!isOpen)}>
