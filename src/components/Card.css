@@ -39,9 +39,13 @@
   top: 0.5em;
   border: none;
   background: none;
-  /* outline: none; */
+  outline: none;
 }
 .card .x-button:before {
-  content: '✖️';
+  content: '✖';
   font-size: 1.5em;
+}
+.card .x-button:focus,
+.card .x-button:hover {
+  color: dodgerblue;
 }
