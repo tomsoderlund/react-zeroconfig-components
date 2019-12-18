@@ -1,32 +1,40 @@
 import React from 'react'
 
-const handleChange = (onChange, event) => {
-  const newEvent = Object.assign({}, event, { target: { value: (event.target.value === 'null') ? null : event.target.value } })
-  if (onChange) onChange(newEvent)
-}
+const MenuItem = ({ option }) => (
+  <option
+    value={option.value}
+    disabled={option.disabled}
+  >
+    {option.name}
+  </option>
+)
 
+/** SelectDropdown */
 export default (props) => {
-  const { options, onChange, ...otherProps } = props
+  const { options = [], value = '', onChange, emptyOption = '(none)', ...otherProps } = props
+  const isStringArray = options && typeof options[0] === 'string'
+
   const optionTags = [
-    <option key='null' value=''>(none)</option>,
+    ...(emptyOption ? [<option key='null' value='' disabled>{emptyOption}</option>] : []),
     ...props.options.map((option, index) => {
-      const value = (typeof (option) === 'object' && (option.value || option.id))
-        ? option.value || option.id
-        : option
       const newOption = {
-        value,
-        name: (typeof (option) === 'object' && option.name) ? option.name : option,
-        key: (option.key !== undefined)
-          ? option.key
-          : (value !== undefined)
-            ? value
-            : index
+        value: isStringArray ? option : option.value,
+        name: isStringArray ? option : option.name
       }
-      return <option key={newOption.key} data-key={newOption.key} value={newOption.value}>{newOption.name}</option>
+      return (
+        <MenuItem
+          key={index}
+          option={newOption}
+        />
+      )
     })
   ]
   return (
-    <select {...otherProps} onChange={handleChange.bind(undefined, props.onChange)}>
+    <select
+      {...otherProps}
+      value={value}
+      onChange={event => props.onChange(event.target.value)}
+    >
       {optionTags}
     </select>
   )
