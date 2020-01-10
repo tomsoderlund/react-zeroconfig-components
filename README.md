@@ -2,8 +2,14 @@
 
 React components that require _zero_ configuration.
 
+
+## Styling
+
 Styling is optional, CSS files are included but you can also use `styled-components` or similar.
 
+How to import CSS file, example:
+
+    import '../node_modules/react-zeroconfig-components/dist/TokenList.css'
 
 ## Installation
 
