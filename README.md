@@ -2,12 +2,19 @@
 
 React components that require _zero_ configuration.
 
-Styling is optional, CSS files are included but you can also use `styled-components` or similar.
-
 
 ## Installation
 
     yarn add react-zeroconfig-components  # or: npm install react-zeroconfig-components
+
+
+## Styling
+
+Styling is optional, CSS files are included but you can also use `styled-components` or similar.
+
+How to import CSS file, example:
+
+    import '../node_modules/react-zeroconfig-components/dist/TokenList.css'
 
 
 ## Components
@@ -77,7 +84,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <TokenList
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onRemove={token => onRemove(token)}
     />
 
 ![TokenList](docs/TokenList.png)
