@@ -15,10 +15,24 @@ Styling is optional, CSS files are included but you can also use `styled-compone
 See the Storybook stories in `/stories` to see how the components are used in code.
 
 
+### List
+
+    <List
+      values={arrayOfObjects}
+      ordered={false}
+      customFormat={optionalCustomFormat}
+    />
+
+    const optionalCustomFormat = (row) => {
+      /* return formatted value */
+    }
+
+![List](docs/List.png)
+
 ### Table
 
     <Table
-      array={arrayOfObjects}
+      values={arrayOfObjects}
       customFormat={optionalCustomFormat}
     />
 
