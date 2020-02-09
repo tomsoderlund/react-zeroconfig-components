@@ -12,7 +12,7 @@
   text-decoration: none;
   text-transform: capitalize;
   transition: all 0.2s;
-  /* cursor: pointer; */
+  cursor: default;
 }
 .token:hover:not(:disabled) {
   opacity: 0.8;
