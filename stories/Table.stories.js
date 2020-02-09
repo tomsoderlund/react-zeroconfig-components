@@ -6,6 +6,8 @@ import Table from '../src/components/Table'
 import '../src/components/Table.css'
 import '../src/components/common.css'
 
+const simpleArray = ['Apple', 'Banana', 'Citrus']
+
 const tableData = [
   { name: 'Sam Lowry', age: 40 },
   { name: 'Jill Layton', age: 29 },
@@ -29,11 +31,15 @@ export default {
   title: 'Table'
 }
 
-export const basic = () => <Table array={tableData} />
+export const basic = () => <Table values={simpleArray} />
+
+export const complex = () => <Table values={tableData} />
+
+export const deprecatedArray = () => <Table array={tableData} />
 
 export const customDataFormat = () => (
   <Table
-    array={tableData}
+    values={tableData}
     customFormat={customFormat}
   />
 )

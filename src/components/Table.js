@@ -1,25 +1,40 @@
 import React from 'react'
 
 /** customFormat = (field, value) => formattedValue */
-export default ({ array, customFormat, className }) => array && array.length
-  ? (
-    <table className={className}>
+export default ({ values, array, customFormat, ...otherProps }) => {
+  if (!values && !array) return
+  if (!values && array) console.warn('Table: use \'values\' instead of deprecated \'array\' prop.')
+  const tableValues = values || array
+  return (
+    <table {...otherProps}>
       <thead>
         <tr>
-          {Object.keys(array[0]).map((column, columnIndex) => <th key={columnIndex}>{column}</th>)}
+          {typeof tableValues[0] === 'object'
+            ? Object.keys(tableValues[0]).map((column, columnIndex) => <th key={columnIndex}>{column}</th>)
+            : <th>{tableValues[0]}</th>}
         </tr>
       </thead>
       <tbody>
-        {array.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {Object.values(row).map((column, columnIndex) => (
-              <td key={columnIndex}>
-                {customFormat ? customFormat(Object.keys(row)[columnIndex], column) : column}
-              </td>
-            ))}
-          </tr>
-        ))}
+        {tableValues.map((row, rowIndex) => {
+          if (typeof row === 'object') {
+            return (
+              <tr key={rowIndex}>
+                {Object.values(row).map((column, columnIndex) => (
+                  <td key={columnIndex}>
+                    {customFormat
+                      ? customFormat(Object.keys(row)[columnIndex], column)
+                      : column}
+                  </td>
+                ))}
+              </tr>
+            )
+          } else {
+            return (
+              <tr><td>{row}</td></tr>
+            )
+          }
+        })}
       </tbody>
     </table>
   )
-  : null
+}
