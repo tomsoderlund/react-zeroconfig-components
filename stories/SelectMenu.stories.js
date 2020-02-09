@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions'
 import SelectMenu from '../src/components/SelectMenu'
 import '../src/components/SelectMenu.css'
 import '../src/components/common.css'
+import './SelectMenu.stories.css'
 
 const simpleArray = ['Apple', 'Banana', 'Citrus']
 
@@ -37,4 +38,17 @@ export const objectArray = () => {
     action('onChange')(value)
   }
   return <SelectMenu options={menuOptions} value={selected} onChange={handleChange} />
+}
+
+export const styled = () => {
+  const [selected, setSelected] = useState(simpleArray[1])
+  const handleChange = value => {
+    setSelected(value)
+    action('onChange')(value)
+  }
+  return (
+    <div className='SelectMenuContainer'>
+      <SelectMenu options={simpleArray} value={selected} onChange={handleChange} />
+    </div>
+  )
 }

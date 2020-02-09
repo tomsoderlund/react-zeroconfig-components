@@ -1,0 +1,9 @@
+.SelectMenuContainer {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 2em;
+  width: 100%;
+  background-color: darkturquoise;
+  text-align: right;
+}

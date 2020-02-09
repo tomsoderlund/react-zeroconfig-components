@@ -1,4 +1,6 @@
 .select {
+  display: inline-block;
+  position: relative;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -56,6 +58,8 @@
 }
 .select.open .menu-open {
   display: block;
+  left: 0;
+  top: 2em;
 }
 
 .select .menu-item { 
