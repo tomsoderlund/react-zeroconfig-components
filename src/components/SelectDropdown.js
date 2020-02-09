@@ -11,11 +11,11 @@ const MenuItem = ({ option }) => (
 
 /** SelectDropdown */
 export default (props) => {
-  const { options = [], value = '', onChange, emptyOption = '(none)', ...otherProps } = props
+  const { options = [], value = '', onChange, emptyOption = '(none)', allowEmpty, ...otherProps } = props
   const isStringArray = options && typeof options[0] === 'string'
 
   const optionTags = [
-    ...(emptyOption ? [<option key='null' value='' disabled>{emptyOption}</option>] : []),
+    ...(emptyOption ? [<option key='null' value='' disabled={!allowEmpty}>{emptyOption}</option>] : []),
     ...props.options.map((option, index) => {
       const newOption = {
         value: isStringArray ? option : option.value,

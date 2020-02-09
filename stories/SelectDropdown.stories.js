@@ -26,4 +26,6 @@ export const objectArray = () => <SelectDropdown options={menuOptions} onChange=
 
 export const selectOne = () => <SelectDropdown options={menuOptions} emptyOption='Select one:' onChange={action('onChange')} />
 
+export const allowEmpty = () => <SelectDropdown options={menuOptions} emptyOption='Select one:' allowEmpty onChange={action('onChange')} />
+
 export const noEmptyOption = () => <SelectDropdown options={menuOptions} emptyOption={null} onChange={action('onChange')} />
