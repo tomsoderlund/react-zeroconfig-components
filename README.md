@@ -94,10 +94,22 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <TokenInput
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onAdd={handleAdd}
+      onRemove={handleRemove}
     />
 
 ![TokenInput](docs/TokenInput.png)
+
+### TokenSearchInput
+
+    <TokenSearchInput
+      value={currentValue}
+      onSearch={async (searchText) => { return option }}
+      onAdd={handleAdd}
+      onRemove={handleRemove}
+    />
+
+![TokenSearchInput](docs/TokenSearchInput.png)
 
 ### Card
 

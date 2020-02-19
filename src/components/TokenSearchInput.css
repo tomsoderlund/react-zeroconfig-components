@@ -1,0 +1,30 @@
+.input-like {
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 0.2em;
+  border: 1px solid lightgray;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  max-width: 20em;
+  padding: 0.6em;
+  margin: 0.2em;
+  text-align: left;
+  box-shadow: none;
+}
+
+.token-search-input form {
+  display: inline-block;
+}
+
+.token-search-input input {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  padding: 0.5em;
+}

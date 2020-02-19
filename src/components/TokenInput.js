@@ -9,7 +9,6 @@ export default ({ options, value, className, onAdd, onRemove }) => {
     <div className={'token-input input-like ' + (className || '')}>
       <TokenList
         options={value}
-        className={className}
         onRemove={onRemove}
       />
       <SelectDropdown
