@@ -42,6 +42,7 @@ export const basic = () => {
         <p>Company 6</p>
         <p>Company 7</p>
       </Card>
+
       <Card
         layer={1}
         visible={cards.company}
@@ -55,6 +56,7 @@ export const basic = () => {
         </p>
         <p>Person Z</p>
       </Card>
+
       <Card
         layer={2}
         visible={cards.person}

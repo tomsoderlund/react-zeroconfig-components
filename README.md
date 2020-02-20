@@ -120,9 +120,15 @@ See the Storybook stories in `/stories` to see how the components are used in co
 ### Card
 
     <Card
-      layer={1}
+      layer={0}
       visible={isVisible}
       onClose={event => setIsVisible(!isVisible)}
+    >
+      (...content...)
+    </Card>
+    <Card
+      layer={1}
+      ...
     />
 
 ![Card](docs/Card.png)
