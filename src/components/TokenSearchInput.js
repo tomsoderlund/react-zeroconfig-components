@@ -8,7 +8,7 @@ const asObject = (strOrObj) => ({
 })
 
 /** TokenSearchInput */
-export default ({ value, className, onSearch, onAdd, onRemove }) => {
+export default ({ value, className, placeholder = 'Type to search', onSearch, onAdd, onRemove }) => {
   const [searchText, setSearchText] = useState('')
   const [searchResults, setSearchResults] = useState()
   const inputElement = useRef(null)
@@ -49,7 +49,7 @@ export default ({ value, className, onSearch, onAdd, onRemove }) => {
       />
       <form onSubmit={handleSubmitForm}>
         <input
-          placeholder='Type to search'
+          placeholder={placeholder}
           ref={inputElement}
           value={searchText}
           onChange={handleChangeText}

@@ -81,6 +81,7 @@ export const objectArray = () => {
 
   return (
     <TokenSearchInput
+      placeholder='Write e.g. Sam, Jill, Mr'
       options={menuOptions}
       value={selected}
       onSearch={handleSearch}
