@@ -8,6 +8,12 @@ React components that require _zero_ configuration.
     yarn add react-zeroconfig-components  # or: npm install react-zeroconfig-components
 
 
+## Accessibility
+
+- [x] All components use `button` where applicable
+- [x] Keyboard/tab support
+
+
 ## Styling
 
 Styling is optional, CSS files are included but you can also use `styled-components` or similar.
