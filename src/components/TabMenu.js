@@ -15,7 +15,7 @@ const MenuItem = ({ option, value, isStringArray, handleChange }) => (
 export default ({ options, value, className, onChange }) => {
   const isStringArray = options && typeof options[0] === 'string'
   return (
-    <div className={'tab-menu ' + (className || '')}>
+    <nav className={'tab-menu ' + (className || '')}>
       {options && options.map((option, index) => (
         <MenuItem
           key={index}
@@ -25,6 +25,6 @@ export default ({ options, value, className, onChange }) => {
           isStringArray={isStringArray}
         />
       ))}
-    </div>
+    </nav>
   )
 }
