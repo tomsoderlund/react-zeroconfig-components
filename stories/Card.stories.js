@@ -12,7 +12,7 @@ export default {
   title: 'Card'
 }
 
-export const basic = () => {
+export const strings = () => {
   const [cards, setCards] = useState({
     company: false,
     person: false

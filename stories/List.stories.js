@@ -6,15 +6,7 @@ import List from '../src/components/List'
 // import '../src/components/List.css'
 import '../src/components/common.css'
 
-const simpleArray = ['Apple', 'Banana', 'Citrus']
-
-const people = [
-  { name: 'Sam Lowry', age: 40 },
-  { name: 'Jill Layton', age: 29 },
-  { name: 'Harry Tuttle', age: 42 },
-  { name: 'Mrs. Ida Lowry', age: 65 },
-  { name: 'Mr. Kurtzmann', age: 55 }
-]
+import { stringArray, objectArray } from './data/arrays'
 
 const customFormat = (person) => `${person.name} (${person.age} years)`
 
@@ -24,13 +16,13 @@ export default {
   title: 'List'
 }
 
-export const basic = () => <List values={simpleArray} />
+export const strings = () => <List values={stringArray} />
 
-export const ordered = () => <List values={simpleArray} ordered />
+export const ordered = () => <List values={stringArray} ordered />
 
 export const customDataFormat = () => (
   <List
-    values={people}
+    values={objectArray}
     customFormat={customFormat}
   />
 )

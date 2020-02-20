@@ -6,15 +6,7 @@ import Table from '../src/components/Table'
 import '../src/components/Table.css'
 import '../src/components/common.css'
 
-const simpleArray = ['Apple', 'Banana', 'Citrus']
-
-const tableData = [
-  { name: 'Sam Lowry', age: 40 },
-  { name: 'Jill Layton', age: 29 },
-  { name: 'Harry Tuttle', age: 42 },
-  { name: 'Mrs. Ida Lowry', age: 65 },
-  { name: 'Mr. Kurtzmann', age: 55 }
-]
+import { stringArray, objectArray } from './data/arrays'
 
 const customFormat = (field, value) => {
   switch (field) {
@@ -31,15 +23,15 @@ export default {
   title: 'Table'
 }
 
-export const basic = () => <Table values={simpleArray} />
+export const strings = () => <Table values={stringArray} />
 
-export const complex = () => <Table values={tableData} />
+export const objects = () => <Table values={objectArray} />
 
-export const deprecatedArray = () => <Table array={tableData} />
+export const deprecatedArray = () => <Table array={objectArray} />
 
 export const customDataFormat = () => (
   <Table
-    values={tableData}
+    values={objectArray}
     customFormat={customFormat}
   />
 )
