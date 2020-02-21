@@ -25,8 +25,7 @@ How to import CSS file, example:
 
 ## Components
 
-See the Storybook stories in `/stories` to see how the components are used in code.
-
+See the Storybook stories in `/stories` to see how the components are used in code, including more advanced use cases.
 
 ### List
 
@@ -84,6 +83,17 @@ See the Storybook stories in `/stories` to see how the components are used in co
     />
 
 ![TabMenu](docs/TabMenu.png)
+
+Advanced example:
+
+    <TabMenu
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={handleChange}
+      
+      elementType='nav'
+      customChild={MyCustomComponent}
+    />
 
 ### TokenList
 
@@ -147,6 +157,8 @@ Preview components in Storybook:
     yarn storybook
 
 ...then open http://localhost:6006/ in your browser.
+
+![storybook](docs/storybook.jpg)
 
 ### How to build and deploy
 
