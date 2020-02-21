@@ -14,6 +14,27 @@ const menuOptions = [
   { name: 'About', value: 3 }
 ]
 
+const CustomChild = ({ index, name, selected, handleChange }) => (
+  <div
+    style={{
+      fontSize: '1.2em',
+      flex: 1,
+      textAlign: 'center',
+      cursor: 'pointer',
+      padding: '2em 0',
+      backgroundImage: `url("https://picsum.photos/seed/react-zeroconfig-components-${index}/480/180")`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      transition: 'all 0.3s',
+      fontWeight: selected && 'bold',
+      opacity: !selected && 0.5
+    }}
+    onClick={handleChange}
+  >
+    {name}
+  </div>
+)
+
 // ----- Story -----
 
 export default {
@@ -44,5 +65,14 @@ export const menu = () => {
     setSelected(value)
     action('onChange')(value)
   }
-  return <TabMenu options={menuOptions} value={selected} onChange={handleChange} />
+  return <TabMenu elementType='nav' options={menuOptions} value={selected} onChange={handleChange} />
+}
+
+export const customChildren = () => {
+  const [selected, setSelected] = useState(stringArray[1])
+  const handleChange = value => {
+    setSelected(value)
+    action('onChange')(value)
+  }
+  return <TabMenu customChild={CustomChild} options={stringArray} value={selected} onChange={handleChange} />
 }
