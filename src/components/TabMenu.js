@@ -12,11 +12,15 @@ const MenuItem = ({ option, value, isStringArray, handleChange }) => (
 )
 
 /** TabMenu */
-export default ({ options, value, className, onChange }) => {
+export default ({ options, value, className, elementType = 'div', onChange }) => {
   const isStringArray = options && typeof options[0] === 'string'
   return (
-    <nav className={'tab-menu ' + (className || '')}>
-      {options && options.map((option, index) => (
+    React.createElement(
+      elementType,
+      {
+        className: 'tab-menu ' + (className || '')
+      },
+      options && options.map((option, index) => (
         <MenuItem
           key={index}
           option={option}
@@ -24,7 +28,7 @@ export default ({ options, value, className, onChange }) => {
           handleChange={(event) => onChange((isStringArray ? option : option.value))}
           isStringArray={isStringArray}
         />
-      ))}
-    </nav>
+      ))
+    )
   )
 }
