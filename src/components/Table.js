@@ -30,7 +30,7 @@ export default ({ values, array, customFormat, ...otherProps }) => {
             )
           } else {
             return (
-              <tr><td>{row}</td></tr>
+              <tr key={rowIndex}><td>{row}</td></tr>
             )
           }
         })}
