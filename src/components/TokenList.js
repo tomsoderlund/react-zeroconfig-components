@@ -2,14 +2,14 @@ import React from 'react'
 
 const XButton = ({ onRemove, option }) => <button className='x-button' onClick={event => onRemove(option)} />
 
-const Token = ({ option, value, isStringArray, handleSelect, onRemove }) => (
+const Token = ({ index, option, name, selected, currentValue, handleSelect, onRemove }) => (
   <span
     className='token'
     title={option.title}
     disabled={option.disabled}
     onClick={handleSelect}
   >
-    {isStringArray ? option : option.name}
+    {name}
     {onRemove ? <XButton onRemove={onRemove} option={option} /> : null}
   </span>
 )
@@ -22,11 +22,13 @@ export default ({ options, value, className, onSelect, onRemove }) => {
       {options && options.map((option, index) => (
         <Token
           key={index}
+          index={index}
           option={option}
-          value={value}
-          handleSelect={(event) => onSelect && onSelect((isStringArray ? option : option.value))}
+          name={isStringArray ? option : option.name}
+          currentValue={value}
+          selected={(isStringArray ? option : option.value) === value}
+          handleSelect={(event) => onSelect && onSelect((isStringArray ? option : option.value), index)}
           onRemove={onRemove}
-          isStringArray={isStringArray}
         />
       ))}
     </span>

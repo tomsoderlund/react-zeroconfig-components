@@ -26,8 +26,8 @@ export default ({ options = [], value, className, onChange }) => {
   const isStringArray = options && typeof options[0] === 'string'
   const currentName = isStringArray ? value : options[value] && options[value].name
 
-  const handleChange = value => {
-    onChange(value)
+  const handleChangeAndClose = (value, index) => {
+    onChange(value, index)
     setIsOpen(false)
   }
 
@@ -46,7 +46,7 @@ export default ({ options = [], value, className, onChange }) => {
             name={isStringArray ? option : option.name}
             currentValue={value}
             selected={(isStringArray ? option : option.value) === value}
-            handleChange={event => handleChange(isStringArray ? option : option.value)}
+            handleChange={event => handleChangeAndClose((isStringArray ? option : option.value), index)}
           />
         ))}
       </div>

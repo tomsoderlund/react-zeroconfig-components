@@ -17,7 +17,7 @@ export default (props) => {
 
   const optionTags = [
     ...(emptyOption ? [<option key='null' value='' disabled={!allowEmpty}>{emptyOption}</option>] : []),
-    ...props.options.map((option, index) => (
+    ...options.map((option, index) => (
       <MenuItem
         key={index}
         option={asObject(option)}
