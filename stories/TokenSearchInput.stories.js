@@ -22,7 +22,7 @@ export const strings = () => {
     return searchResults
   }
 
-  const handleAdd = value => {
+  const handleAdd = (value, isNew) => {
     const newSelected = [...selected, value]
     console.log('handleAdd:', value, newSelected)
     setSelected(newSelected)
@@ -55,7 +55,7 @@ export const objects = () => {
     return searchResults
   }
 
-  const handleAdd = value => {
+  const handleAdd = (value, isNew) => {
     const valueObj = (typeof objectArrayWithDisabled[0] === 'object')
       ? objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
       : value
@@ -79,6 +79,43 @@ export const objects = () => {
       onSearch={handleSearch}
       onAdd={handleAdd}
       onRemove={handleRemove}
+    />
+  )
+}
+
+export const canAddAny = () => {
+  const [selected, setSelected] = useState([stringArray[1]])
+
+  const handleSearch = async searchText => {
+    const searchResults = stringArray.filter(option => searchText.length && option.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
+    return searchResults
+  }
+
+  const handleAdd = (value, isNew) => {
+    if (isNew) {
+      if (!window.confirm(`'${value}' doesn’t exist yet – add it anyway?`)) return
+    }
+    const newSelected = [...selected, value]
+    console.log('handleAdd:', value, newSelected)
+    setSelected(newSelected)
+    action('onAdd')(value)
+  }
+
+  const handleRemove = value => {
+    const newSelected = selected.filter(option => option !== value)
+    console.log('handleRemove:', value, newSelected)
+    setSelected(newSelected)
+    action('onRemove')(value)
+  }
+
+  return (
+    <TokenSearchInput
+      options={stringArray}
+      value={selected}
+      onSearch={handleSearch}
+      onAdd={handleAdd}
+      onRemove={handleRemove}
+      canAddAny
     />
   )
 }
