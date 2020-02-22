@@ -1,5 +1,7 @@
 import React from 'react'
 
+import asObject from '../lib/asObject'
+
 const MenuItem = ({ option }) => (
   <option
     value={option.value}
@@ -12,28 +14,22 @@ const MenuItem = ({ option }) => (
 /** SelectDropdown */
 export default (props) => {
   const { options = [], value = '', onChange, emptyOption = '(none)', allowEmpty, ...otherProps } = props
-  const isStringArray = options && typeof options[0] === 'string'
 
   const optionTags = [
     ...(emptyOption ? [<option key='null' value='' disabled={!allowEmpty}>{emptyOption}</option>] : []),
-    ...props.options.map((option, index) => {
-      const newOption = {
-        value: isStringArray ? option : option.value,
-        name: isStringArray ? option : option.name
-      }
-      return (
-        <MenuItem
-          key={index}
-          option={newOption}
-        />
-      )
-    })
+    ...props.options.map((option, index) => (
+      <MenuItem
+        key={index}
+        option={asObject(option)}
+      />
+    ))
   ]
+
   return (
     <select
       {...otherProps}
       value={value}
-      onChange={event => props.onChange(event.target.value)}
+      onChange={event => onChange(event.target.value)}
     >
       {optionTags}
     </select>

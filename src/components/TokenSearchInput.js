@@ -1,11 +1,7 @@
 import React, { useState, useRef } from 'react'
 
+import asObject from '../lib/asObject'
 import TokenList from './TokenList'
-
-const asObject = (strOrObj) => ({
-  name: typeof strOrObj === 'object' ? strOrObj.name : strOrObj,
-  value: typeof strOrObj === 'object' ? strOrObj.value : strOrObj
-})
 
 /** TokenSearchInput */
 export default ({ value, className, placeholder = 'Type to search', canAddAny, onSearch, onAdd, onRemove }) => {
