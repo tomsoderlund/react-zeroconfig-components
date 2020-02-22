@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 
-import asObject from '../lib/asObject'
+import asObject from './lib/asObject'
 import TokenList from './TokenList'
 
 /** TokenSearchInput */

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import asObject from '../lib/asObject'
+import asObject from './lib/asObject'
 
 const MenuItem = ({ option }) => (
   <option
