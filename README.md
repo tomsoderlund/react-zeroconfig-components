@@ -109,7 +109,7 @@ Advanced example:
 
     <TokenInput
       options={arrayOfStringsOrObjects}
-      value={currentValue}
+      value={smallerArrayOfStringsOrObjects}
       onAdd={handleAdd}
       onRemove={handleRemove}
     />
@@ -119,13 +119,24 @@ Advanced example:
 ### TokenSearchInput
 
     <TokenSearchInput
-      value={currentValue}
-      onSearch={async (searchText) => { return option }}
+      value={arrayOfStringsOrObjects}
+      onSearch={async (searchText) => { return foundMatch }}
       onAdd={handleAdd}
       onRemove={handleRemove}
     />
 
 ![TokenSearchInput](docs/TokenSearchInput.png)
+
+### SearchInput
+
+    <SearchInput
+      placeholder='Type here to search'
+      canSubmitAny={true}
+      onSearch={async (searchText) => { return foundMatch }}
+      onSubmit={handleSubmit}
+    />
+
+![SearchInput](docs/SearchInput.png)
 
 ### Card
 
