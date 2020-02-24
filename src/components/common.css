@@ -8,3 +8,10 @@ body {
   margin: 0;
   padding: 1em;
 }
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}

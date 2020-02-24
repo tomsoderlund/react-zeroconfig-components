@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 
-import TokenSearchInput from '../src/components/TokenSearchInput'
-import '../src/components/TokenSearchInput.css'
-import '../src/components/TokenList.css'
+import SearchInput from '../src/components/SearchInput'
 import '../src/components/common.css'
 
 import { stringArray, objectArrayWithDisabled } from './data/arrays'
@@ -11,7 +9,7 @@ import { stringArray, objectArrayWithDisabled } from './data/arrays'
 // ----- Story -----
 
 export default {
-  title: 'TokenSearchInput'
+  title: 'SearchInput'
 }
 
 export const strings = () => {
@@ -23,25 +21,16 @@ export const strings = () => {
     return searchResults
   }
 
-  const handleAdd = (value, isNew) => {
-    action('onAdd')(value, isNew)
+  const handleSubmit = (value, isNew) => {
+    action('onSubmit')(value, isNew)
     const newSelected = [...selected, value]
     setSelected(newSelected)
   }
 
-  const handleRemove = (value, index) => {
-    action('onRemove')(value, index)
-    const newSelected = selected.filter(option => option !== value)
-    setSelected(newSelected)
-  }
-
   return (
-    <TokenSearchInput
-      options={stringArray}
-      value={selected}
+    <SearchInput
       onSearch={handleSearch}
-      onAdd={handleAdd}
-      onRemove={handleRemove}
+      onSubmit={handleSubmit}
     />
   )
 }
@@ -49,56 +38,38 @@ export const strings = () => {
 export const objects = () => {
   const [selected, setSelected] = useState([objectArrayWithDisabled[1]])
 
-  const handleSelect = (value, index) => {
-    action('onSelect')(value, index)
-  }
-
   const handleSearch = async (searchText) => {
     action('onSearch')(searchText)
     const searchResults = objectArrayWithDisabled.filter(option => searchText.length && option.name.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
     return searchResults
   }
 
-  const handleAdd = (value, isNew) => {
-    action('onAdd')(value, isNew)
+  const handleSubmit = (value, isNew) => {
+    action('onSubmit')(value, isNew)
     const valueObj = objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
     const newSelected = [...selected, valueObj]
     setSelected(newSelected)
   }
 
-  const handleRemove = (value, index) => {
-    action('onRemove')(value, index)
-    const newSelected = selected.filter(option => option.value !== value)
-    setSelected(newSelected)
-  }
-
   return (
-    <TokenSearchInput
+    <SearchInput
       placeholder='Write e.g. Sam, Jill, Mr'
-      options={objectArrayWithDisabled}
-      value={selected}
-      onSelect={handleSelect}
       onSearch={handleSearch}
-      onAdd={handleAdd}
-      onRemove={handleRemove}
+      onSubmit={handleSubmit}
     />
   )
 }
 
-export const canAddAny = () => {
+export const canSubmitAny = () => {
   const [selected, setSelected] = useState([stringArray[1]])
-
-  const handleSelect = (value, index) => {
-    action('onSelect')(value, index)
-  }
 
   const handleSearch = async searchText => {
     const searchResults = stringArray.filter(option => searchText.length && option.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
     return searchResults
   }
 
-  const handleAdd = (value, isNew) => {
-    action('onAdd')(value, isNew)
+  const handleSubmit = (value, isNew) => {
+    action('onSubmit')(value, isNew)
     if (isNew) {
       if (!window.confirm(`'${value}' doesn’t exist yet – add it anyway?`)) return
     }
@@ -106,21 +77,11 @@ export const canAddAny = () => {
     setSelected(newSelected)
   }
 
-  const handleRemove = (value, index) => {
-    action('onRemove')(value, index)
-    const newSelected = selected.filter(option => option !== value)
-    setSelected(newSelected)
-  }
-
   return (
-    <TokenSearchInput
-      options={stringArray}
-      value={selected}
-      onSelect={handleSelect}
+    <SearchInput
       onSearch={handleSearch}
-      onAdd={handleAdd}
-      onRemove={handleRemove}
-      canAddAny
+      onSubmit={handleSubmit}
+      canSubmitAny
     />
   )
 }
