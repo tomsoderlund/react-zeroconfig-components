@@ -16,23 +16,29 @@ export default {
 
 export const strings = () => {
   const [selected, setSelected] = useState([stringArray[1]])
+
   const handleAdd = value => {
     const newSelected = [...selected, value]
-    console.log('handleAdd:', value, newSelected)
     setSelected(newSelected)
     action('onAdd')(value)
   }
+
   const handleRemove = value => {
     const newSelected = selected.filter(option => option !== value)
-    console.log('handleRemove:', value, newSelected)
     setSelected(newSelected)
     action('onRemove')(value)
   }
+
   return <TokenInput options={stringArray} value={selected} onAdd={handleAdd} onRemove={handleRemove} />
 }
 
 export const objects = () => {
   const [selected, setSelected] = useState([objectArrayWithDisabled[1]])
+
+  const handleSelect = (value, index) => {
+    action('onSelect')(value, index)
+  }
+
   const handleAdd = value => {
     const valueObj = (typeof objectArrayWithDisabled[0] === 'object')
       ? objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
@@ -41,11 +47,12 @@ export const objects = () => {
     setSelected(newSelected)
     action('onAdd')(newSelected)
   }
+
   const handleRemove = value => {
     const newSelected = selected.filter(option => option !== value)
-    console.log('handleRemove:', value, newSelected)
     setSelected(newSelected)
     action('onRemove')(newSelected)
   }
-  return <TokenInput options={objectArrayWithDisabled} value={selected} onAdd={handleAdd} onRemove={handleRemove} />
+
+  return <TokenInput options={objectArrayWithDisabled} value={selected} onSelect={handleSelect} onAdd={handleAdd} onRemove={handleRemove} />
 }

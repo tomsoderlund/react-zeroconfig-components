@@ -4,11 +4,12 @@ import SelectDropdown from './SelectDropdown'
 import TokenList from './TokenList'
 
 /** TokenInput */
-export default ({ options, value, className, onAdd, onRemove }) => {
+export default ({ options, value, className, onSelect, onAdd, onRemove }) => {
   return (
     <div className={'token-input input-like ' + (className || '')}>
       <TokenList
         options={value}
+        onSelect={onSelect}
         onRemove={onRemove}
       />
       <SelectDropdown

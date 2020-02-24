@@ -24,14 +24,12 @@ export const strings = () => {
 
   const handleAdd = (value, isNew) => {
     const newSelected = [...selected, value]
-    console.log('handleAdd:', value, newSelected)
     setSelected(newSelected)
     action('onAdd')(value)
   }
 
   const handleRemove = value => {
     const newSelected = selected.filter(option => option !== value)
-    console.log('handleRemove:', value, newSelected)
     setSelected(newSelected)
     action('onRemove')(value)
   }
@@ -66,7 +64,6 @@ export const objects = () => {
 
   const handleRemove = value => {
     const newSelected = selected.filter(option => option !== value)
-    console.log('handleRemove:', value, newSelected)
     setSelected(newSelected)
     action('onRemove')(newSelected)
   }
@@ -100,14 +97,12 @@ export const canAddAny = () => {
       if (!window.confirm(`'${value}' doesn’t exist yet – add it anyway?`)) return
     }
     const newSelected = [...selected, value]
-    console.log('handleAdd:', value, newSelected)
     setSelected(newSelected)
     action('onAdd')(value)
   }
 
   const handleRemove = value => {
     const newSelected = selected.filter(option => option !== value)
-    console.log('handleRemove:', value, newSelected)
     setSelected(newSelected)
     action('onRemove')(value)
   }
