@@ -43,36 +43,44 @@ export default {
 
 export const strings = () => {
   const [selected, setSelected] = useState(stringArray[1])
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <TabMenu options={stringArray} value={selected} onChange={handleChange} />
 }
 
 export const objects = () => {
   const [selected, setSelected] = useState(objectArrayWithDisabled[1].value)
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <TabMenu options={objectArrayWithDisabled} value={selected} onChange={handleChange} />
 }
 
 export const menu = () => {
   const [selected, setSelected] = useState(menuOptions[1].value)
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <TabMenu elementType='nav' options={menuOptions} value={selected} onChange={handleChange} />
 }
 
 export const customChildren = () => {
   const [selected, setSelected] = useState(stringArray[1])
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <TabMenu customChild={CustomChild} options={stringArray} value={selected} onChange={handleChange} />
 }

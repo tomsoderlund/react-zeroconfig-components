@@ -17,20 +17,35 @@ export const strings = () => {
   const [selected, setSelected] = useState(stringArray[1])
 
   const handleSelect = (value, index) => {
-    setSelected(value)
     action('onSelect')(value, index)
+    setSelected(value)
   }
 
-  return <TokenList options={stringArray} value={selected} onSelect={handleSelect} />
+  return (
+    <TokenList
+      options={stringArray}
+      value={selected}
+      onSelect={handleSelect}
+    />)
 }
 
 export const objects = () => {
   const [selected, setSelected] = useState(objectArrayWithDisabled[1].value)
 
   const handleSelect = (value, index) => {
-    setSelected(value)
     action('onSelect')(value, index)
+    setSelected(value)
   }
 
-  return <TokenList options={objectArrayWithDisabled} value={selected} onSelect={handleSelect} />
+  const handleRemove = (value, index) => {
+    action('onRemove')(value, index)
+  }
+
+  return (
+    <TokenList
+      options={objectArrayWithDisabled}
+      value={selected}
+      onSelect={handleSelect}
+      onRemove={handleRemove}
+    />)
 }

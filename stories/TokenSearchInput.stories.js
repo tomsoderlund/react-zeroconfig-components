@@ -17,21 +17,22 @@ export default {
 export const strings = () => {
   const [selected, setSelected] = useState([stringArray[1]])
 
-  const handleSearch = async searchText => {
+  const handleSearch = async (searchText) => {
+    action('onSearch')(searchText)
     const searchResults = stringArray.filter(option => searchText.length && option.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
     return searchResults
   }
 
   const handleAdd = (value, isNew) => {
+    action('onAdd')(value, isNew)
     const newSelected = [...selected, value]
     setSelected(newSelected)
-    action('onAdd')(value)
   }
 
-  const handleRemove = value => {
+  const handleRemove = (value, index) => {
+    action('onRemove')(value, index)
     const newSelected = selected.filter(option => option !== value)
     setSelected(newSelected)
-    action('onRemove')(value)
   }
 
   return (
@@ -48,24 +49,29 @@ export const strings = () => {
 export const objects = () => {
   const [selected, setSelected] = useState([objectArrayWithDisabled[1]])
 
-  const handleSearch = async searchText => {
+  const handleSelect = (value, index) => {
+    action('onSelect')(value, index)
+  }
+
+  const handleSearch = async (searchText) => {
+    action('onSearch')(searchText)
     const searchResults = objectArrayWithDisabled.filter(option => searchText.length && option.name.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
     return searchResults
   }
 
   const handleAdd = (value, isNew) => {
+    action('onAdd')(value, isNew)
     const valueObj = (typeof objectArrayWithDisabled[0] === 'object')
       ? objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
       : value
     const newSelected = [...selected, valueObj]
     setSelected(newSelected)
-    action('onAdd')(newSelected)
   }
 
-  const handleRemove = value => {
+  const handleRemove = (value, index) => {
+    action('onRemove')(value, index)
     const newSelected = selected.filter(option => option !== value)
     setSelected(newSelected)
-    action('onRemove')(newSelected)
   }
 
   return (
@@ -73,6 +79,7 @@ export const objects = () => {
       placeholder='Write e.g. Sam, Jill, Mr'
       options={objectArrayWithDisabled}
       value={selected}
+      onSelect={handleSelect}
       onSearch={handleSearch}
       onAdd={handleAdd}
       onRemove={handleRemove}
@@ -93,18 +100,18 @@ export const canAddAny = () => {
   }
 
   const handleAdd = (value, isNew) => {
+    action('onAdd')(value, isNew)
     if (isNew) {
       if (!window.confirm(`'${value}' doesn’t exist yet – add it anyway?`)) return
     }
     const newSelected = [...selected, value]
     setSelected(newSelected)
-    action('onAdd')(value)
   }
 
-  const handleRemove = value => {
+  const handleRemove = (value, index) => {
+    action('onRemove')(value, index)
     const newSelected = selected.filter(option => option !== value)
     setSelected(newSelected)
-    action('onRemove')(value)
   }
 
   return (

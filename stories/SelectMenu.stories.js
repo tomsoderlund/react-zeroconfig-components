@@ -16,28 +16,34 @@ export default {
 
 export const strings = () => {
   const [selected, setSelected] = useState(stringArray[1])
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <SelectMenu options={stringArray} value={selected} onChange={handleChange} />
 }
 
 export const objects = () => {
   const [selected, setSelected] = useState(objectArrayWithDisabled[1].value)
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return <SelectMenu options={objectArrayWithDisabled} value={selected} onChange={handleChange} />
 }
 
 export const styled = () => {
   const [selected, setSelected] = useState(stringArray[1])
+
   const handleChange = (value, index) => {
-    setSelected(value)
     action('onChange')(value, index)
+    setSelected(value)
   }
+
   return (
     <div className='SelectMenuContainer'>
       <SelectMenu options={stringArray} value={selected} onChange={handleChange} />

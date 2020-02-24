@@ -1,10 +1,12 @@
 import React from 'react'
 
-const XButton = ({ onRemove, option }) => (
+import asObject from './lib/asObject'
+
+const XButton = ({ onRemove, option, index }) => (
   <button
     className='x-button' onClick={event => {
       event.stopPropagation()
-      onRemove(option)
+      onRemove(asObject(option).value, index)
     }}
   />
 )
@@ -18,7 +20,7 @@ const Token = ({ index, option, name, selected, currentValue, onSelect, onRemove
       onClick={onSelect}
     >
       {name}
-      {onRemove ? <XButton onRemove={onRemove} option={option} /> : null}
+      {onRemove ? <XButton onRemove={onRemove} option={option} index={index} /> : null}
     </span>
   )
 }
