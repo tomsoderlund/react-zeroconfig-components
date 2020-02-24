@@ -11,11 +11,14 @@
   border: 1px solid rgba(0,0,0, 0.2);
   text-decoration: none;
   text-transform: capitalize;
-  transition: all 0.2s;
   cursor: default;
+  transition: all 0.2s;
 }
 .token:hover:not(:disabled) {
   opacity: 0.8;
+}
+.token.selectable {
+  cursor: pointer;
 }
 .token.new {
   background-color: limegreen;

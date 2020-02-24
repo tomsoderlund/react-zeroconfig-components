@@ -4,7 +4,7 @@ import asObject from './lib/asObject'
 import TokenList from './TokenList'
 
 /** TokenSearchInput */
-export default ({ value, className, placeholder = 'Type to search', canAddAny, onSearch, onAdd, onRemove }) => {
+export default ({ value, className, placeholder = 'Type to search', canAddAny, onSelect, onSearch, onAdd, onRemove }) => {
   const [searchText, setSearchText] = useState('')
   const [searchResults, setSearchResults] = useState()
   const inputElement = useRef(null)
@@ -43,6 +43,7 @@ export default ({ value, className, placeholder = 'Type to search', canAddAny, o
     <div className={'token-search-input input-like ' + (className || '')}>
       <TokenList
         options={value}
+        onSelect={onSelect}
         onRemove={onRemove}
       />
       <form onSubmit={handleSubmitForm}>

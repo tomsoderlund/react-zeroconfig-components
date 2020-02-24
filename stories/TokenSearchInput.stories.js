@@ -86,6 +86,10 @@ export const objects = () => {
 export const canAddAny = () => {
   const [selected, setSelected] = useState([stringArray[1]])
 
+  const handleSelect = (value, index) => {
+    action('onSelect')(value, index)
+  }
+
   const handleSearch = async searchText => {
     const searchResults = stringArray.filter(option => searchText.length && option.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
     return searchResults
@@ -112,6 +116,7 @@ export const canAddAny = () => {
     <TokenSearchInput
       options={stringArray}
       value={selected}
+      onSelect={handleSelect}
       onSearch={handleSearch}
       onAdd={handleAdd}
       onRemove={handleRemove}
