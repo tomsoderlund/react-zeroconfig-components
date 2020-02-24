@@ -56,6 +56,7 @@ export const objects = () => {
   const handleSearch = async (searchText) => {
     action('onSearch')(searchText)
     const searchResults = objectArrayWithDisabled.filter(option => searchText.length && option.name.substr(0, searchText.length).toLowerCase() === searchText.toLowerCase())[0]
+    console.log(`searchResults:`, searchResults)
     return searchResults
   }
 
@@ -68,7 +69,7 @@ export const objects = () => {
 
   const handleRemove = (value, index) => {
     action('onRemove')(value, index)
-    const newSelected = selected.filter(option => option !== value)
+    const newSelected = selected.filter(option => option.value !== value)
     setSelected(newSelected)
   }
 
