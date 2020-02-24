@@ -33,7 +33,7 @@ export default ({ value, className, placeholder = 'Type to search', canAddAny, o
     event.preventDefault()
     if (searchText.length > 0 && (searchResults || canAddAny)) {
       const isNew = !searchResults
-      const addValue = asObject(searchResults).value || searchText
+      const addValue = (searchResults !== undefined) ? asObject(searchResults).value : searchText
       onAdd(addValue, isNew)
       setSearchText('')
     }

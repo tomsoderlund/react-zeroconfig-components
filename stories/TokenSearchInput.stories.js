@@ -61,9 +61,7 @@ export const objects = () => {
 
   const handleAdd = (value, isNew) => {
     action('onAdd')(value, isNew)
-    const valueObj = (typeof objectArrayWithDisabled[0] === 'object')
-      ? objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
-      : value
+    const valueObj = objectArrayWithDisabled.filter(option => option.value == value)[0] // eslint-disable-line eqeqeq
     const newSelected = [...selected, valueObj]
     setSelected(newSelected)
   }
