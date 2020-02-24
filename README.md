@@ -123,6 +123,9 @@ Advanced example:
       onSearch={async (searchText) => { return foundMatch }}
       onAdd={handleAdd}
       onRemove={handleRemove}
+
+      placeholder='Type here to search'
+      canAddAny={true}
     />
 
 ![TokenSearchInput](docs/TokenSearchInput.png)
@@ -130,10 +133,11 @@ Advanced example:
 ### SearchInput
 
     <SearchInput
-      placeholder='Type here to search'
-      canSubmitAny={true}
       onSearch={async (searchText) => { return foundMatch }}
       onSubmit={handleSubmit}
+
+      placeholder='Type here to search'
+      canSubmitAny={true}
     />
 
 ![SearchInput](docs/SearchInput.png)
@@ -153,6 +157,17 @@ Advanced example:
     />
 
 ![Card](docs/Card.png)
+
+
+## Events
+
+- `onAdd`
+- `onChange`
+- `onClose`
+- `onRemove`
+- `onSearch`
+- `onSelect`
+- `onSubmit`
 
 
 ## Developing components
