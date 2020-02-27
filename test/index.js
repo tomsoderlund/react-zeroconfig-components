@@ -1,3 +1,3 @@
-const { Table } = require('../dist')
+const { RadioButtons } = require('../dist')
 
-console.log('Table:', { Table })
+console.log('Test:', { RadioButtons })
