@@ -1,3 +1,7 @@
-label.disabled {
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-item.disabled {
   color: lightgray;
 }
