@@ -110,7 +110,8 @@ Advanced example:
     <TokenList
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onRemove={token => onRemove(token)}
+      onSelect={token => handleSelect(token)}
+      onRemove={token => handleRemove(token)}
     />
 
 ![TokenList](docs/TokenList.png)
