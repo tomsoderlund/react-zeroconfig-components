@@ -21,9 +21,10 @@ const MenuItem = ({ index, option, name, selected, currentValue, handleChange })
 )
 
 /** SelectMenu */
-export default ({ options = [], value, className, onChange }) => {
+export default ({ options = [], value, className, customChild, onChange }) => {
   const [isOpen, setIsOpen] = useState(0)
   const isStringArray = options && typeof options[0] === 'string'
+  const ChildComponent = customChild || MenuItem
   const currentName = isStringArray ? value : options[value] && options[value].name
 
   const handleChangeAndClose = (value, index) => {
@@ -39,7 +40,7 @@ export default ({ options = [], value, className, onChange }) => {
       </button>
       <div className='menu-open'>
         {options && options.map((option, index) => (
-          <MenuItem
+          <ChildComponent
             key={index}
             index={index}
             option={option}
