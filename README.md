@@ -29,6 +29,8 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ### List
 
+    import { List } from 'react-zeroconfig-components'
+
     <List
       values={arrayOfObjects}
       ordered={false}
