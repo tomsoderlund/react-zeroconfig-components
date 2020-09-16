@@ -43,6 +43,20 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![List](docs/List.png)
 
+### EditInPlace
+
+    <EditInPlace
+      placeholder='Edit headline'
+      value={article.headline}
+      onChange={headline => updateArticle({ headline })}
+      canEdit={!!user}
+      style={{ fontSize: '2.5em' }}
+    >
+      <h1>{article.headline}</h1>
+    </EditInPlace>
+
+![EditInPlace](docs/EditInPlace.png)
+
 ### RadioButtons
 
     <RadioButtons
