@@ -12,15 +12,15 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{ display: 'inline-block' }}>
       <input
         ref={inputElement}
         type='text'
         value={inputValue || ''}
         style={{
           ...style,
-          padding: '0 !important',
-          width: '100% !important'
+          padding: '0',
+          width: '100%'
         }}
         placeholder={placeholder}
         required
@@ -34,7 +34,7 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
 const EditInPlace = ({ canEdit = true, children, value, placeholder, style, onChange }) => {
   const [isEditing, setIsEditing] = useState(false)
   return (
-    <span>
+    <span className='edit-in-place'>
       {isEditing ? (
         <EditForm
           value={value}
