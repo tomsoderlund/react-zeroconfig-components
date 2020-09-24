@@ -17,19 +17,16 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
         ref={inputElement}
         type='text'
         value={inputValue || ''}
-        style={style}
+        style={{
+          ...style,
+          padding: '0 !important',
+          width: '100% !important'
+        }}
         placeholder={placeholder}
         required
         onChange={e => setInputValue(e.target.value)}
         onBlur={handleSubmit}
       />
-      <style jsx>{`
-        input {
-          padding: 0 !important;
-          width: 100% !important;
-        }
-      `}
-      </style>
     </form>
   )
 }
