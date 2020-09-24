@@ -17,11 +17,7 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
         ref={inputElement}
         type='text'
         value={inputValue || ''}
-        style={{
-          ...style,
-          padding: '0',
-          width: '100%'
-        }}
+        style={style}
         placeholder={placeholder}
         required
         onChange={e => setInputValue(e.target.value)}
