@@ -51,7 +51,7 @@ export const withOptions = () => {
 }
 
 export const inlineWithText = () => {
-  const [text, setText] = useState('This text can be edited')
+  const [text, setText] = useState('EDITABLE TEXT')
 
   const handleChangeText = (text) => {
     action('onChange')(text)
@@ -60,12 +60,16 @@ export const inlineWithText = () => {
 
   return (
     <>
-      This is just part of the <EditInPlace
+      This is just part of the
+      {' '}
+      <EditInPlace
         value={text}
         onChange={handleChangeText}
       >
         {text}
-      </EditInPlace> rest of the text.
+      </EditInPlace>
+      {' '}
+      rest of the text.
     </>
   )
 }
