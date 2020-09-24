@@ -34,7 +34,7 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
 const EditInPlace = ({ canEdit = true, children, value, placeholder, style, onChange }) => {
   const [isEditing, setIsEditing] = useState(false)
   return (
-    <div>
+    <span>
       {isEditing ? (
         <EditForm
           value={value}
@@ -50,7 +50,7 @@ const EditInPlace = ({ canEdit = true, children, value, placeholder, style, onCh
           {children}
         </span>
       )}
-    </div>
+    </span>
   )
 }
 export default EditInPlace
