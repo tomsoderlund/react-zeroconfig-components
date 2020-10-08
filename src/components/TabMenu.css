@@ -16,6 +16,7 @@
   -moz-appearance: none;
   font-family: inherit;
   font-size: inherit;
+  min-width: unset;
   border: none;
   background: none;
   cursor: pointer;
