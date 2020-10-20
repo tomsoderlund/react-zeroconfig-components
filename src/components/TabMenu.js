@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuItem = ({ index, option, name, selected, value, handleChange }) => (
+const MenuItem = ({ index, option, name, selected, currentValue, handleChange }) => (
   <button
     id={value}
     className={'menu-item' + (selected ? ' selected' : '')}
@@ -28,7 +28,7 @@ export default ({ options, value, className, elementType = 'div', customChild, o
           index={index}
           option={option}
           name={isStringArray ? option : option.name}
-          value={value}
+          currentValue={value}
           selected={(isStringArray ? option : option.value) === value}
           handleChange={(event) => onChange((isStringArray ? option : option.value), index)}
         />

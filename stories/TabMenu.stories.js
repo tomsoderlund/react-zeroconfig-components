@@ -14,7 +14,7 @@ const menuOptions = [
   { name: 'About', value: 3 }
 ]
 
-const CustomChild = ({ option, index, name, value, selected, handleChange }) => (
+const CustomChild = ({ index, name, selected, handleChange }) => (
   <div
     style={{
       fontSize: '1.2em',
@@ -49,13 +49,7 @@ export const strings = () => {
     setSelected(value)
   }
 
-  return (
-    <TabMenu
-      options={stringArray}
-      value={selected}
-      onChange={handleChange}
-    />
-  )
+  return <TabMenu options={stringArray} value={selected} onChange={handleChange} />
 }
 
 export const objects = () => {
@@ -66,13 +60,7 @@ export const objects = () => {
     setSelected(value)
   }
 
-  return (
-    <TabMenu
-      options={objectArrayWithDisabled}
-      value={selected}
-      onChange={handleChange}
-    />
-  )
+  return <TabMenu options={objectArrayWithDisabled} value={selected} onChange={handleChange} />
 }
 
 export const menu = () => {
@@ -83,14 +71,7 @@ export const menu = () => {
     setSelected(value)
   }
 
-  return (
-    <TabMenu
-      elementType='nav'
-      options={menuOptions}
-      value={selected}
-      onChange={handleChange}
-    />
-  )
+  return <TabMenu elementType='nav' options={menuOptions} value={selected} onChange={handleChange} />
 }
 
 export const customChildren = () => {
@@ -101,12 +82,5 @@ export const customChildren = () => {
     setSelected(value)
   }
 
-  return (
-    <TabMenu
-      customChild={CustomChild}
-      options={stringArray}
-      value={selected}
-      onChange={handleChange}
-    />
-  )
+  return <TabMenu customChild={CustomChild} options={stringArray} value={selected} onChange={handleChange} />
 }

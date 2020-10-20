@@ -11,7 +11,7 @@ const XButton = ({ onRemove, option, index }) => (
   />
 )
 
-const Token = ({ index, option, name, value, selected, onSelect, onRemove }) => {
+const Token = ({ index, option, name, selected, currentValue, onSelect, onRemove }) => {
   return (
     <span
       id={value}
@@ -37,7 +37,7 @@ export default ({ options, value, className, onSelect, onRemove }) => {
           index={index}
           option={option}
           name={isStringArray ? option : option.name}
-          value={value}
+          currentValue={value}
           selected={(isStringArray ? option : option.value) === value}
           onSelect={onSelect && ((event) => onSelect((isStringArray ? option : option.value), index))}
           onRemove={onRemove}

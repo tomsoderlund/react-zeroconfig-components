@@ -2,7 +2,7 @@ import React from 'react'
 
 import asObject from './lib/asObject'
 
-const MenuItem = ({ group, index, option, name, value, selected, handleChange }) => {
+const MenuItem = ({ group, index, option, name, selected, currentValue, handleChange }) => {
   const elementId = `${group}-${option.value}`
   const className = 'menu-item' + (selected ? ' selected' : '') + (option.disabled ? ' disabled' : '')
   return (
@@ -41,7 +41,7 @@ const RadioButtons = ({ options = [], value, group = 'radio-group', className, o
           group={group}
           option={asObject(option)}
           name={asObject(option).name}
-          value={value}
+          currentValue={value}
           selected={asObject(option).value === value}
           handleChange={event => onChange(asObject(option).value, index)}
         />
