@@ -9,7 +9,7 @@ const Arrows = () => (
   </svg>
 )
 
-const MenuItem = ({ index, option, name, selected, currentValue, handleChange }) => (
+const MenuItem = ({ index, option, name, value, selected, handleChange }) => (
   <button
     className={'menu-item' + (selected ? ' selected' : '')}
     title={option.title}
@@ -45,7 +45,7 @@ export default ({ options = [], value, className, customChild, onChange }) => {
             index={index}
             option={option}
             name={isStringArray ? option : option.name}
-            currentValue={value}
+            value={value}
             selected={(isStringArray ? option : option.value) === value}
             handleChange={event => handleChangeAndClose((isStringArray ? option : option.value), index)}
           />
