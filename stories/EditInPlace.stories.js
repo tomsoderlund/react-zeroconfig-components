@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions'
 
 import EditInPlace from '../src/components/EditInPlace'
 import '../src/components/common.css'
+import '../src/components/EditInPlace.css'
 
 // ----- Story -----
 
