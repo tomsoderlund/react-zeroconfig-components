@@ -2,6 +2,7 @@ import React from 'react'
 
 const MenuItem = ({ index, option, name, selected, value, handleChange }) => (
   <button
+    id={value}
     className={'menu-item' + (selected ? ' selected' : '')}
     title={option.title}
     disabled={option.disabled}

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 
-const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
+const EditForm = ({ id, value, placeholder, style, onChange, setIsEditing }) => {
   const [inputValue, setInputValue] = useState(value)
   const inputElement = useRef(null)
   useEffect(() => inputElement.current.focus(), [])
@@ -14,6 +14,7 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
   return (
     <form onSubmit={handleSubmit} style={{ display: 'inline-block' }}>
       <input
+        id={id}
         ref={inputElement}
         type='text'
         value={inputValue || ''}
@@ -30,12 +31,13 @@ const EditForm = ({ value, placeholder, style, onChange, setIsEditing }) => {
   )
 }
 
-const EditInPlace = ({ canEdit = true, children, value, placeholder, style, onChange }) => {
+const EditInPlace = ({ id, canEdit = true, children, value, placeholder, style, onChange }) => {
   const [isEditing, setIsEditing] = useState(false)
   return (
     <span className='edit-in-place'>
       {isEditing ? (
         <EditForm
+          id={id}
           value={value}
           placeholder={placeholder}
           style={style}

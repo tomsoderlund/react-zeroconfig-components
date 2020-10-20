@@ -14,6 +14,7 @@ const XButton = ({ onRemove, option, index }) => (
 const Token = ({ index, option, name, value, selected, onSelect, onRemove }) => {
   return (
     <span
+      id={value}
       className={'token' + (onSelect ? ' selectable' : '')}
       title={option.title}
       disabled={option.disabled}

@@ -11,6 +11,7 @@ const Arrows = () => (
 
 const MenuItem = ({ index, option, name, value, selected, handleChange }) => (
   <button
+    id={value}
     className={'menu-item' + (selected ? ' selected' : '')}
     title={option.title}
     disabled={option.disabled}
