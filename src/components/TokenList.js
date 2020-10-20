@@ -37,6 +37,7 @@ export default ({ options, value, className, onSelect, onRemove }) => {
           index={index}
           option={option}
           name={isStringArray ? option : option.name}
+          value={isStringArray ? option : option.value}
           currentValue={value}
           selected={(isStringArray ? option : option.value) === value}
           onSelect={onSelect && ((event) => onSelect((isStringArray ? option : option.value), index))}

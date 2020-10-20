@@ -46,6 +46,7 @@ export default ({ options = [], value, className, customChild, onChange }) => {
             index={index}
             option={option}
             name={isStringArray ? option : option.name}
+            value={isStringArray ? option : option.value}
             currentValue={value}
             selected={(isStringArray ? option : option.value) === value}
             handleChange={event => handleChangeAndClose((isStringArray ? option : option.value), index)}

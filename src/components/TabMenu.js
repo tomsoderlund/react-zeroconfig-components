@@ -28,6 +28,7 @@ export default ({ options, value, className, elementType = 'div', customChild, o
           index={index}
           option={option}
           name={isStringArray ? option : option.name}
+          value={isStringArray ? option : option.value}
           currentValue={value}
           selected={(isStringArray ? option : option.value) === value}
           handleChange={(event) => onChange((isStringArray ? option : option.value), index)}

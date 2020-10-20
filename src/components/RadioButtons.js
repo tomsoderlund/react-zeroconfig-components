@@ -41,6 +41,7 @@ const RadioButtons = ({ options = [], value, group = 'radio-group', className, o
           group={group}
           option={asObject(option)}
           name={asObject(option).name}
+          value={asObject(option).value}
           currentValue={value}
           selected={asObject(option).value === value}
           handleChange={event => onChange(asObject(option).value, index)}
