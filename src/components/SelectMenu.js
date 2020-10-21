@@ -9,7 +9,7 @@ const Arrows = () => (
   </svg>
 )
 
-const MenuItem = ({ index, option, name, selected, currentValue, handleChange }) => (
+const MenuItem = ({ index, option, name, value, selected, currentValue, handleChange }) => (
   <button
     id={value}
     className={'menu-item' + (selected ? ' selected' : '')}

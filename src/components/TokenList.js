@@ -11,7 +11,7 @@ const XButton = ({ onRemove, option, index }) => (
   />
 )
 
-const Token = ({ index, option, name, selected, currentValue, onSelect, onRemove }) => {
+const Token = ({ index, option, name, value, selected, currentValue, onSelect, onRemove }) => {
   return (
     <span
       id={value}
