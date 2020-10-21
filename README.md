@@ -37,7 +37,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
       customFormat={optionalCustomFormat}
     />
 
-    const optionalCustomFormat = (row) => {
+    const optionalCustomFormat = (row, index) => {
       /* return formatted value */
     }
 
@@ -74,7 +74,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
       customFormat={optionalCustomFormat}
     />
 
-    const optionalCustomFormat = (field, value) => {
+    const optionalCustomFormat = (field, value, rowIndex, columnIndex) => {
       /* return formatted value */
     }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-/** customFormat = (field, value) => formattedValue */
+/** customFormat = (field, value, rowIndex, columnIndex) => formattedValue */
 export default ({ values, array, customFormat, ...otherProps }) => {
   if (!values && !array) return
   if (!values && array) console.warn('Table: use \'values\' instead of deprecated \'array\' prop.')
@@ -22,7 +22,7 @@ export default ({ values, array, customFormat, ...otherProps }) => {
                 {Object.values(row).map((column, columnIndex) => (
                   <td key={columnIndex}>
                     {customFormat
-                      ? customFormat(Object.keys(row)[columnIndex], column)
+                      ? customFormat(Object.keys(row)[columnIndex], column, rowIndex, columnIndex)
                       : column}
                   </td>
                 ))}
