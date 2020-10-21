@@ -33,7 +33,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
     <List
       values={arrayOfObjects}
-      ordered={false}
+      numbered={false}
       customFormat={optionalCustomFormat}
     />
 
