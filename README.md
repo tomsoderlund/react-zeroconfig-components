@@ -62,7 +62,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <RadioButtons
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onChange={value => handleChange(value)}
     />
 
 ![RadioButtons](docs/RadioButtons.png)
@@ -85,7 +85,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <SelectDropdown
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onChange={value => handleChange(value)}
     />
 
 ![SelectDropdown](docs/SelectDropdown.png)
@@ -95,7 +95,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <SelectMenu
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onChange={value => handleChange(value)}
     />
 
 ![SelectMenu](docs/SelectMenu.png)
@@ -105,7 +105,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
     <TabMenu
       options={arrayOfStringsOrObjects}
       value={currentValue}
-      onChange={event => handleChange(event)}
+      onChange={value => handleChange(value)}
     />
 
 ![TabMenu](docs/TabMenu.png)
