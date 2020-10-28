@@ -216,3 +216,17 @@ Preview components in Storybook:
 ### How to build and deploy
 
     yarn publish  # yarn prepare (Babel) will be run automatically
+
+## Troubleshooting
+
+React Hook order error:
+
+> Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+> 1. You might have mismatching versions of React and the renderer (such as React DOM)
+> 2. You might be breaking the Rules of Hooks
+> 3. You might have more than one copy of React in the same app
+> See https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.
+
+Solution: check if conflicting versions:
+
+    yarn list react  # or npm ls react
