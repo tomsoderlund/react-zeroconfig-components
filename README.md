@@ -67,6 +67,15 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![RadioButtons](docs/RadioButtons.png)
 
+### ToggleSwitch
+
+    <ToggleSwitch
+      value={currentValue}
+      onChange={value => handleChange(value)}
+    />
+
+![ToggleSwitch](docs/ToggleSwitch.png)
+
 ### Table
 
     <Table
