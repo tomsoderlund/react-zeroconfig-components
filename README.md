@@ -222,7 +222,7 @@ Preview components in Storybook:
 
 ![storybook](docs/storybook.jpg)
 
-### How to build and deploy
+### How to build and publish a new NPM package
 
     yarn publish  # yarn prepare (Babel) will be run automatically
 
