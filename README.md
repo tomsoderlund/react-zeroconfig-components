@@ -239,3 +239,8 @@ React Hook order error:
 Solution: check if conflicting versions:
 
     yarn list react  # or npm ls react
+
+## Todo
+
+- [ ] Range slider
+- [ ] Range slider 2D
