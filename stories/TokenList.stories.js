@@ -26,7 +26,8 @@ export const strings = () => {
       options={stringArray}
       value={selected}
       onSelect={handleSelect}
-    />)
+    />
+  )
 }
 
 export const objects = () => {
@@ -47,5 +48,6 @@ export const objects = () => {
       value={selected}
       onSelect={handleSelect}
       onRemove={handleRemove}
-    />)
+    />
+  )
 }

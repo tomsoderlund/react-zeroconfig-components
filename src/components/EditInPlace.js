@@ -35,22 +35,24 @@ const EditInPlace = ({ id, canEdit = true, children, value, placeholder, style, 
   const [isEditing, setIsEditing] = useState(false)
   return (
     <span className='edit-in-place'>
-      {isEditing ? (
-        <EditForm
-          id={id}
-          value={value}
-          placeholder={placeholder}
-          style={style}
-          onChange={onChange}
-          setIsEditing={setIsEditing}
-        />
-      ) : (
-        <span
-          onClick={e => setIsEditing(canEdit)}
-        >
-          {children}
-        </span>
-      )}
+      {isEditing
+        ? (
+          <EditForm
+            id={id}
+            value={value}
+            placeholder={placeholder}
+            style={style}
+            onChange={onChange}
+            setIsEditing={setIsEditing}
+          />
+          )
+        : (
+          <span
+            onClick={e => setIsEditing(canEdit)}
+          >
+            {children}
+          </span>
+          )}
     </span>
   )
 }
