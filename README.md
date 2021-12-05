@@ -89,6 +89,19 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![Table](docs/Table.png)
 
+### ListCard
+
+    <ListCard
+      name='Sam Lowry'
+      details='Main character'
+      imageUrl='https://pbs.twimg.com/profile_images/943955598718017536/XVuOSUzc_400x400.jpg'
+    >
+      <button>Edit</button>
+      <button>Delete</button>
+    </ListCard>
+
+![ListCard](docs/ListCard.png)
+
 ### SelectDropdown
 
     <SelectDropdown
