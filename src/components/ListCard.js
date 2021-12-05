@@ -1,9 +1,13 @@
 import React from 'react'
 
-const ListCard = ({ name, details, imageUrl, children }) => {
+const ListCard = ({ name, details, imageUrl, image, children }) => {
   return (
     <div className='list-card'>
-      <ListCardIcon name={name} imageUrl={imageUrl} />
+      <ListCardIcon
+        name={name}
+        imageUrl={imageUrl}
+        image={image}
+      />
 
       <div className='name-details'>
         <div className='name'>{name}</div>
@@ -16,6 +20,8 @@ const ListCard = ({ name, details, imageUrl, children }) => {
 }
 export default ListCard
 
-const ListCardIcon = ({ imageUrl, name }) => (
-  <img className='list-card-icon' src={imageUrl || '/images/user.svg'} alt={name} />
+const ListCardIcon = ({ image, imageUrl, name }) => (
+  <div className='list-card-icon'>
+    {image || (<img src={imageUrl || '/images/user.svg'} alt={name} />)}
+  </div>
 )

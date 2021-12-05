@@ -41,6 +41,14 @@ export const standard = () => {
         <button>Edit</button>
         <button>Delete</button>
       </ListCard>
+
+      <ListCard
+        name='New item'
+        image={<button>Set image</button>}
+      >
+        <button>Edit</button>
+        <button>Delete</button>
+      </ListCard>
     </div>
   )
 }
