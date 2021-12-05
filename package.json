@@ -32,13 +32,13 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.7.4",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addons": "^6.0.28",
+    "@storybook/react": "^6.0.28",
     "babel-loader": "^8.0.4",
-    "css-loader": "^3.3.2",
+    "css-loader": "^5.0.0",
     "path": "^0.12.7",
-    "standard": "^14.3.1"
+    "standard": "^16.0.0"
   }
 }
