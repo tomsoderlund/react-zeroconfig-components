@@ -2,6 +2,8 @@
 
 React components that require _zero_ configuration.
 
+For Stripe payments etc, see https://github.com/tomsoderlund/react-zeroconfig-payments
+
 
 ## Installation
 
