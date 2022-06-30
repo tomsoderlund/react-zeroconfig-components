@@ -29,9 +29,9 @@ How to import CSS file, example:
 
 There are three groups of components:
 
-1. **Array-based components:** these all have similar props, they all take an array of strings or `{ name, value }` and renders a list or a menu.
-2. **Input components:** taking input from the user.
-3. **Other components:** everything else.
+1. **[Array-based components](#array-based-components):** these all have similar props, they all take an array of strings or `{ name, value }` and renders a list or a menu.
+2. **[Input components](#input-components):** taking input from the user.
+3. **[Other components](#other-components):** everything else.
 
 See the Storybook stories in `/stories` to see how the components are used in code, including more advanced use cases.
 
