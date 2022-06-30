@@ -1,6 +1,7 @@
 export { default as Card } from './Card'
 export { default as EditInPlace } from './EditInPlace'
 export { default as List } from './List'
+export { default as ListCard } from './ListCard'
 export { default as RadioButtons } from './RadioButtons'
 export { default as SearchInput } from './SearchInput'
 export { default as SelectDropdown } from './SelectDropdown'
