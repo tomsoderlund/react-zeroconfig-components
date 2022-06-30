@@ -27,9 +27,19 @@ How to import CSS file, example:
 
 ## Components
 
+There are three groups of components:
+
+1. **Array-based components:** these all have similar props, they all take an array of strings or `{ name, value }` and renders a list or a menu.
+2. **Input components:** taking input from the user.
+3. **Other components:** everything else.
+
 See the Storybook stories in `/stories` to see how the components are used in code, including more advanced use cases.
 
-### List
+### Array-based components
+
+![Array-based components](docs/components_array.png)
+
+#### Component: List
 
     import { List } from 'react-zeroconfig-components'
 
@@ -45,40 +55,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![List](docs/List.png)
 
-### EditInPlace
-
-    <EditInPlace
-      placeholder='Edit headline'
-      value={article.headline}
-      onChange={headline => updateArticle({ headline })}
-      canEdit={!!user}
-      style={{ fontSize: '2.5em' }}
-    >
-      <h1>{article.headline}</h1>
-    </EditInPlace>
-
-![EditInPlace](docs/EditInPlace.png)
-
-### RadioButtons
-
-    <RadioButtons
-      options={arrayOfStringsOrObjects}
-      value={currentValue}
-      onChange={value => handleChange(value)}
-    />
-
-![RadioButtons](docs/RadioButtons.png)
-
-### ToggleSwitch
-
-    <ToggleSwitch
-      value={currentValue}
-      onChange={value => handleChange(value)}
-    />
-
-![ToggleSwitch](docs/ToggleSwitch.png)
-
-### Table
+#### Component: Table
 
     <Table
       values={arrayOfObjects}
@@ -91,20 +68,17 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![Table](docs/Table.png)
 
-### ListCard
+#### Component: RadioButtons
 
-    <ListCard
-      name='Sam Lowry'
-      details='Main character'
-      imageUrl='https://pbs.twimg.com/profile_images/943955598718017536/XVuOSUzc_400x400.jpg'
-    >
-      <button>Edit</button>
-      <button>Delete</button>
-    </ListCard>
+    <RadioButtons
+      options={arrayOfStringsOrObjects}
+      value={currentValue}
+      onChange={value => handleChange(value)}
+    />
 
-![ListCard](docs/ListCard.png)
+![RadioButtons](docs/RadioButtons.png)
 
-### SelectDropdown
+#### Component: SelectDropdown
 
     <SelectDropdown
       options={arrayOfStringsOrObjects}
@@ -114,7 +88,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![SelectDropdown](docs/SelectDropdown.png)
 
-### SelectMenu
+#### Component: SelectMenu
 
     <SelectMenu
       options={arrayOfStringsOrObjects}
@@ -124,7 +98,7 @@ See the Storybook stories in `/stories` to see how the components are used in co
 
 ![SelectMenu](docs/SelectMenu.png)
 
-### TabMenu
+#### Component: TabMenu
 
     <TabMenu
       options={arrayOfStringsOrObjects}
@@ -145,7 +119,7 @@ Advanced example:
       customChild={MyCustomComponent}
     />
 
-### TokenList
+#### Component: TokenList
 
     <TokenList
       options={arrayOfStringsOrObjects}
@@ -156,7 +130,20 @@ Advanced example:
 
 ![TokenList](docs/TokenList.png)
 
-### TokenInput
+## Input components
+
+![Input components](docs/components_input.png)
+
+#### Component: ToggleSwitch
+
+    <ToggleSwitch
+      value={currentValue}
+      onChange={value => handleChange(value)}
+    />
+
+![ToggleSwitch](docs/ToggleSwitch.png)
+
+#### Component: TokenInput
 
     <TokenInput
       options={arrayOfStringsOrObjects}
@@ -167,7 +154,7 @@ Advanced example:
 
 ![TokenInput](docs/TokenInput.png)
 
-### TokenSearchInput
+#### Component: TokenSearchInput
 
     <TokenSearchInput
       value={arrayOfStringsOrObjects}
@@ -181,7 +168,7 @@ Advanced example:
 
 ![TokenSearchInput](docs/TokenSearchInput.png)
 
-### SearchInput
+#### Component: SearchInput
 
     <SearchInput
       onSearch={async (searchText) => { return foundMatch }}
@@ -193,7 +180,38 @@ Advanced example:
 
 ![SearchInput](docs/SearchInput.png)
 
-### Card
+#### Component: EditInPlace
+
+    <EditInPlace
+      placeholder='Edit headline'
+      value={article.headline}
+      onChange={headline => updateArticle({ headline })}
+      canEdit={!!user}
+      style={{ fontSize: '2.5em' }}
+    >
+      <h1>{article.headline}</h1>
+    </EditInPlace>
+
+![EditInPlace](docs/EditInPlace.png)
+
+### Other components
+
+![Other components](docs/components_other.png)
+
+#### Component: ListCard
+
+    <ListCard
+      name='Sam Lowry'
+      details='Main character'
+      imageUrl='https://pbs.twimg.com/profile_images/943955598718017536/XVuOSUzc_400x400.jpg'
+    >
+      <button>Edit</button>
+      <button>Delete</button>
+    </ListCard>
+
+![ListCard](docs/ListCard.png)
+
+#### Component: Card
 
     <Card
       layer={0}
