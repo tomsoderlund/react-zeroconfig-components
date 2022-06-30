@@ -1,6 +1,6 @@
 # React Zero-Config Components
 
-React components that require _zero_ configuration.
+React components that require (almost) zero configuration.
 
 For Stripe payments etc, see https://github.com/tomsoderlund/react-zeroconfig-payments
 
